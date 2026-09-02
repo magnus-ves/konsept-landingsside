@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body{margin:0;background:#ffffff;-webkit-font-smoothing:antialiased}
+  *{box-sizing:border-box}
+  a{color:#3F6D8F;text-decoration:none}
+  a:hover{color:#2c5570}
+  .kf-rise{opacity:1;animation:kfIn .7s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes kfIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .kf-sym{animation:kfDrift 22s ease-in-out infinite}
+  @keyframes kfDrift{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-1.2%,1%) rotate(1.2deg)}}
+  @supports (animation-timeline: view()){
+    .kf-rise{animation:kfIn 1s cubic-bezier(.2,.7,.2,1) both;animation-timeline:view();animation-range:entry 5% entry 60%}
+    .kf-line{animation:kfGrow 1s linear both;animation-timeline:view();animation-range:entry 10% cover 35%}
+  }
+  @keyframes kfGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .kf-hero>*{animation:kfIn 1s cubic-bezier(.2,.7,.2,1) both}
+  .kf-hero>*:nth-child(1){animation-delay:.05s}
+  .kf-hero>*:nth-child(2){animation-delay:.22s}
+  .kf-hero>*:nth-child(3){animation-delay:.36s}
+  .kf-hero>*:nth-child(4){animation-delay:.5s}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans',sans-serif; color: #213542; overflow-x: hidden; background: #ffffff; position: relative" ref="{{ setRoot }}">
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:8px 56px;background:{{ navBg }};backdrop-filter:{{ navBlur }};transition:background .4s ease">
+    <a href="#" style="display:flex;align-items:center">
+      <img src="./assets/konsept-logo-full.svg" alt="Konsept" style="display: block; height: 55px; width: 148px; filter: {{ navLogoFilter }}; transition: filter .4s ease">
+    </a>
+    <div style="display:flex;gap:40px;font-size:14px;letter-spacing:.01em">
+      <a href="#intro" style="color:{{ navColor }};transition:color .4s ease" style-hover="{{ navLinkHover }}">Tjenester</a>
+      <a href="#om" style="color:{{ navColor }};transition:color .4s ease" style-hover="{{ navLinkHover }}">Om oss</a>
+      <a href="#arbeid" style="color:{{ navColor }};transition:color .4s ease" style-hover="{{ navLinkHover }}">Arbeid</a>
+      <a href="#kontakt" style="color:{{ navColor }};transition:color .4s ease" style-hover="{{ navLinkHover }}">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  
+
+  <!-- INTRO -->
+  <section style="position:relative;min-height:100vh;background:linear-gradient(90deg,rgba(20,45,68,.86) 0%,rgba(20,45,68,.62) 45%,rgba(20,45,68,.35) 100%),url('./uploads/pasted-1787232222557-0.png') center/cover no-repeat #3F6D8F;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:0 56px">
+    <sc-if value="{{ showHeroSymbol }}" hint-placeholder-val="{{ true }}">
+    <svg class="kf-sym" width="620" height="310" viewBox="230 490 1040 520" style="position:absolute;right:-40px;bottom:-80px;opacity:.12;pointer-events:none">
+      <path fill="#ffffff" d="M 1009.753906 1009.753906 C 853.898438 1009.753906 780.300781 884.203125 711.03125 771.640625 C 650.421875 667.738281 594.140625 576.824219 490.238281 576.824219 C 394.992188 576.824219 317.066406 654.75 317.066406 749.996094 C 317.066406 845.238281 394.992188 923.167969 490.238281 923.167969 L 490.238281 1009.753906 C 347.371094 1009.753906 230.480469 892.859375 230.480469 749.996094 C 230.480469 607.128906 347.371094 490.238281 490.238281 490.238281 C 646.089844 490.238281 719.691406 615.785156 788.957031 728.347656 C 853.898438 832.25 905.847656 923.167969 1009.753906 923.167969 C 1104.996094 923.167969 1182.925781 845.238281 1182.925781 749.996094 C 1182.925781 654.75 1104.996094 576.824219 1009.753906 576.824219 L 1009.753906 490.238281 C 1152.621094 490.238281 1269.511719 607.128906 1269.511719 749.996094 C 1269.511719 892.859375 1152.621094 1009.753906 1009.753906 1009.753906 Z"></path>
+    </svg>
+    </sc-if>
+    <div class="kf-hero" style="max-width: 1100px; margin: 0; width: 100%; padding-top: 110px; position: relative; text-align:{{ heroTextAlign }}">
+      <img src="./assets/konsept-logo-full.svg" alt="Konsept" style="display: block; height: 138px; object-fit: contain; position: relative; left: -29px; top: 60px; width: 348px; z-index: 0; filter: brightness(0) invert(1); margin-bottom: 12px;margin-left:{{ heroLogoMargin }};margin-right:{{ heroLogoMargin }}">
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(30px,3.6vw,48px);color:#D2DDE5;margin-top:32px;position:relative;z-index:1;letter-spacing:-.01em">Ideer. Retning. Resultater.</div><p style="max-width:520px;font-size:18px;line-height:1.65;color:#e7edf1;margin-top:26px;position:relative;z-index:1;margin-left:{{ heroPMargin }};margin-right:{{ heroPMargin }}">Vi hjelper virksomheter å bli mer synlige og attraktive — gjennom foto, merkevarebygging og målrettet markedsføring.</p>
+      <a href="#kontakt" style="display:inline-flex;align-items:center;gap:10px;margin-top:44px;padding:17px 34px;background:#ffffff;color:#3F6D8F;font-weight:600;font-size:15px;border-radius:2px;position:relative;z-index:1" style-hover="{background:'#D2DDE5'}">Book en samtale →</a></div>
+    <div style="height:100px"></div>
+  </section><section id="intro" style="padding:150px 56px;max-width:1240px;margin:0 auto">
+    <div class="kf-rise" ref="{{ obs }}" style="display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(34px,4.5vw,54px);line-height:1.08;color:#3F6D8F;margin:0">Vi gir retning til det som ennå ikke har form.</h2>
+      <p style="font-size:19px;line-height:1.75;color:#2c4a5e;margin:8px 0 0">Konsept skal hjelpe virksomheter å bli mer attraktive gjennom gjennomtenkt design, skarp markedsføring og fotografi som treffer. Vi forenkler det komplekse og gir merkevarer en tydelig retning — fra idé til resultat.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="padding:0 56px 130px;max-width:1240px;margin:0 auto">
+    <div class="kf-rise" ref="{{ obs }}" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid #D2DDE5;padding-top:56px">
+      <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(38px,4.5vw,56px);color:#3F6D8F">{{ st.value }}</div>
+          <div style="font-size:14.5px;color:#2c4a5e;margin-top:8px">{{ st.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- TJENESTER -->
+  <section style="background:#D2DDE5;padding:130px 56px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div class="kf-rise" ref="{{ obs }}" style="margin-bottom:64px">
+        <span style="font-size:13px;letter-spacing:.12em;color:#3F6D8F;font-weight:600">TJENESTER</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4vw,48px);color:#3F6D8F;margin:14px 0 0">Det vi gjør for deg</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat({{ servicesColumns }},1fr);gap:1px;background:rgba(63,109,143,.25)">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <div class="kf-rise" ref="{{ obs }}" style="background:#D2DDE5;padding:44px 36px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;transition:background .35s ease,transform .35s cubic-bezier(.2,.7,.2,1)" style-hover="{{ cardHover }}">
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#3F6D8F;font-weight:600">{{ s.num }}</span>
+            <div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#3F6D8F;margin:0 0 10px">{{ s.title }}</h3>
+              <p style="font-size:15px;line-height:1.55;color:#2c4a5e;margin:0">{{ s.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILOSOFI -->
+  <section style="padding:150px 56px;max-width:1240px;margin:0 auto">
+    <div class="kf-rise" ref="{{ obs }}" style="margin-bottom:80px">
+      <span style="font-size:13px;letter-spacing:.12em;color:#3F6D8F;font-weight:600">METODE</span>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4vw,48px);color:#3F6D8F;margin:14px 0 0">Hvordan vi arbeider</h2>
+    </div>
+    <div class="kf-rise" ref="{{ obs }}" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative">
+      <div class="kf-line" style="position:absolute;top:14px;left:0;right:0;height:2px;background:#D2DDE5;z-index:0;transform-origin:left center"></div>
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div style="position:relative;padding-right:24px;z-index:1">
+          <div style="width:28px;height:28px;border-radius:50%;background:#3F6D8F;margin-bottom:28px"></div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#3F6D8F;font-weight:600;margin-bottom:8px">{{ st.num }}</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;color:#3F6D8F;margin:0 0 10px">{{ st.title }}</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#2c4a5e;margin:0">{{ st.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ARBEID -->
+  <section id="arbeid" style="background:#3F6D8F;padding:150px 56px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div class="kf-rise" ref="{{ obs }}" style="margin-bottom:70px">
+        <span style="font-size:13px;letter-spacing:.12em;color:#D2DDE5;font-weight:600">ARBEID</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4vw,48px);color:#ffffff;margin:14px 0 0">Utvalgte prosjekter</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:110px">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+          <div class="kf-rise" ref="{{ obs }}" style="display:grid;grid-template-columns:{{ p.colsSafe }};gap:48px;align-items:center">
+            <div style="order:{{ p.imgOrder }};width:100%;min-width:0;aspect-ratio:16/10;overflow:hidden;transition:transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="{{ mediaHover }}">
+              <image-slot id="{{ p.id }}" shape="rect" placeholder="{{ p.placeholder }}"></image-slot>
+            </div>
+            <div style="order:{{ p.textOrder }};min-width:0">
+              <span style="font-size:13px;color:#D2DDE5;letter-spacing:.06em">{{ p.tag }}</span>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.4vw,40px);color:#ffffff;margin:12px 0 0">{{ p.title }}</h3>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section style="padding:130px 56px;max-width:1000px;margin:0 auto;text-align:center">
+    <div class="kf-rise" ref="{{ obs }}">
+      <span style="font-size:13px;letter-spacing:.12em;color:#3F6D8F;font-weight:600">TILBAKEMELDING</span>
+      <p style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(24px,3vw,34px);line-height:1.4;color:#3F6D8F;margin:24px 0 24px">«Konsept ga oss en tydelig retning når vi selv ikke visste hvor vi skulle. Resultatet ble en merkevare kundene faktisk husker.»</p>
+      <div style="font-size:15px;color:#2c4a5e"><strong style="color:#3F6D8F">Ingrid Solheim</strong> — daglig leder, Nordisk Handel</div>
+    </div>
+  </section>
+
+  <!-- KLIENTER -->
+  <section style="background:#D2DDE5;padding:90px 56px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div class="kf-rise" ref="{{ obs }}" style="text-align:center;margin-bottom:50px">
+        <span style="font-size:13px;letter-spacing:.12em;color:#3F6D8F;font-weight:600">VI HAR JOBBET MED</span>
+      </div>
+      <div class="kf-rise" ref="{{ obs }}" style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px">
+        <sc-for list="{{ clients }}" as="c" hint-placeholder-count="5">
+          <div style="height:56px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;color:#3F6D8F;opacity:.55">{{ c.name }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- OM OSS -->
+  <section id="om" style="padding:150px 56px;max-width:1240px;margin:0 auto">
+    <div class="kf-rise" ref="{{ obs }}" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center">
+      <div style="width:100%;min-width:0;aspect-ratio:4/5">
+        <image-slot id="om-oss" shape="rect" placeholder="Bilde av teamet eller lokalene"></image-slot>
+      </div>
+      <div>
+        <span style="font-size:13px;letter-spacing:.12em;color:#3F6D8F;font-weight:600">OM KONSEPT</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4vw,46px);color:#3F6D8F;line-height:1.1;margin:14px 0 22px">Fra idé til synlig resultat.</h2>
+        <p style="font-size:18px;line-height:1.75;color:#2c4a5e;margin:0">Konsept er et rådgivningsbyrå bygget på én idé: gode resultater starter med et klart konsept. Vi kombinerer foto, design og markedsføring for å gjøre virksomheter mer attraktive — synlig, tydelig og relevant. Vi jobber tett med hver kunde, fra første idé til ferdig levert kampanje, og legger vekt på løsninger som er enkle å forstå og lette å kjenne igjen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section style="background:#D2DDE5;padding:130px 56px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div class="kf-rise" ref="{{ obs }}" style="margin-bottom:64px">
+        <span style="font-size:13px;letter-spacing:.12em;color:#3F6D8F;font-weight:600">TEAMET</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4vw,48px);color:#3F6D8F;margin:14px 0 0">Menneskene bak Konsept</h2>
+      </div>
+      <div class="kf-rise" ref="{{ obs }}" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px">
+        <sc-for list="{{ team }}" as="t" hint-placeholder-count="4">
+          <div>
+            <div style="width:100%;min-width:0;aspect-ratio:1;margin-bottom:18px;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="{{ mediaHover }}">
+              <image-slot id="{{ t.id }}" shape="rect" placeholder="{{ t.placeholder }}"></image-slot>
+            </div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;color:#3F6D8F">{{ t.name }}</div>
+            <div style="font-size:14px;color:#2c4a5e;margin-top:4px">{{ t.role }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding:150px 56px;max-width:900px;margin:0 auto">
+    <div class="kf-rise" ref="{{ obs }}" style="margin-bottom:64px">
+      <span style="font-size:13px;letter-spacing:.12em;color:#3F6D8F;font-weight:600">SPØRSMÅL</span>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4vw,48px);color:#3F6D8F;margin:14px 0 0">Ofte stilte spørsmål</h2>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div class="kf-rise" ref="{{ obs }}" style="padding:28px 0;border-top:1px solid #D2DDE5">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;color:#3F6D8F;margin:0 0 10px">{{ f.q }}</h3>
+          <p style="font-size:16px;line-height:1.65;color:#2c4a5e;margin:0">{{ f.a }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" style="background:#3F6D8F;padding:170px 56px 120px;position:relative;overflow:hidden">
+    <svg width="900" height="450" viewBox="230 490 1040 520" style="position:absolute;left:-260px;bottom:-160px;opacity:.10;pointer-events:none">
+      <path fill="#ffffff" d="M 1009.753906 1009.753906 C 853.898438 1009.753906 780.300781 884.203125 711.03125 771.640625 C 650.421875 667.738281 594.140625 576.824219 490.238281 576.824219 C 394.992188 576.824219 317.066406 654.75 317.066406 749.996094 C 317.066406 845.238281 394.992188 923.167969 490.238281 923.167969 L 490.238281 1009.753906 C 347.371094 1009.753906 230.480469 892.859375 230.480469 749.996094 C 230.480469 607.128906 347.371094 490.238281 490.238281 490.238281 C 646.089844 490.238281 719.691406 615.785156 788.957031 728.347656 C 853.898438 832.25 905.847656 923.167969 1009.753906 923.167969 C 1104.996094 923.167969 1182.925781 845.238281 1182.925781 749.996094 C 1182.925781 654.75 1104.996094 576.824219 1009.753906 576.824219 L 1009.753906 490.238281 C 1152.621094 490.238281 1269.511719 607.128906 1269.511719 749.996094 C 1269.511719 892.859375 1152.621094 1009.753906 1009.753906 1009.753906 Z"></path>
+    </svg>
+    <div class="kf-rise" ref="{{ obs }}" style="max-width:1240px;margin:0 auto;position:relative">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(38px,6vw,68px);color:#ffffff;line-height:1.05;margin:0 0 40px">Har du et konsept?<br>La oss utvikle det videre.</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;justify-content:space-between">
+        <a href="mailto:hei@konsept.no" style="display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:#ffffff;color:#3F6D8F;font-weight:600;font-size:15px;border-radius:2px" style-hover="{background:'#D2DDE5'}">Ta kontakt →</a>
+        <div style="display:flex;gap:56px;flex-wrap:wrap;font-size:15px;color:#D2DDE5">
+          <div><div style="color:#ffffff;font-weight:600;margin-bottom:6px">E-post</div>hei@konsept.no</div>
+          <div><div style="color:#ffffff;font-weight:600;margin-bottom:6px">Telefon</div>+47 900 00 000</div>
+          <div><div style="color:#ffffff;font-weight:600;margin-bottom:6px">Adresse</div>Karl Johans gate, Oslo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding:36px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid #D2DDE5">
+    <div style="display:flex;align-items:center;gap:14px">
+      <img src="./assets/konsept-logo-full.svg" alt="Konsept" style="height:32px;width:auto;display:block">
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#2c4a5e">© 2026 KONSEPT</span>
+    </div>
+    <div style="display:flex;gap:32px;font-size:13px;color:#2c4a5e">
+      <a href="#intro" style="color:#2c4a5e">Tjenester</a>
+      <a href="#om" style="color:#2c4a5e">Om oss</a>
+      <a href="#arbeid" style="color:#2c4a5e">Arbeid</a>
+      <a href="#kontakt" style="color:#2c4a5e">Kontakt</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showHeroSymbol&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;heroAlign&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;left&quot;,&quot;options&quot;:[&quot;left&quot;,&quot;center&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;servicesColumns&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;3&quot;,&quot;options&quot;:[&quot;2&quot;,&quot;3&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tjenester&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+
+
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+
+  observeEl = () => {};
+
+  renderVals() {
+    const scrolled = this.state.scrolled;
+    const align = this.props.heroAlign ?? 'left';
+    return {
+      setRoot: () => {},
+      obs: this.observeEl,
+      heroTextAlign: align,
+      heroLogoMargin: align === 'center' ? 'auto' : '0',
+      heroPMargin: align === 'center' ? 'auto' : '0',
+      cardHover: { background: '#c6d4e0', transform: 'translateY(-6px)' },
+      mediaHover: { transform: 'scale(1.03)' },
+      navLogoFilter: scrolled ? 'none' : 'brightness(0) invert(1)',
+      navBg: scrolled ? 'rgba(255,255,255,0.92)' : 'transparent',
+      navBlur: scrolled ? 'blur(8px)' : 'none',
+      navColor: scrolled ? '#3F6D8F' : '#ffffff',
+      navLinkHover: { color: '#D2DDE5' },
+      services: [
+        { num: '01', title: 'Fotografi', desc: 'Bilder som fanger essensen av merkevaren din.' },
+        { num: '02', title: 'Markedsføring', desc: 'Målrettede kampanjer som skaper resultater.' },
+        { num: '03', title: 'Merkevarebygging', desc: 'En tydelig identitet fra grunnen opp.' },
+        { num: '04', title: 'Sosiale medier', desc: 'Innhold som bygger relevans og fellesskap.' },
+        { num: '05', title: 'Innholdsproduksjon', desc: 'Visuelt og tekstlig innhold med retning.' },
+        { num: '06', title: 'Strategi og rådgivning', desc: 'Klarhet før vi skaper.' },
+      ],
+      steps: [
+        { num: '01', title: 'Forstå', desc: 'Vi setter oss inn i virksomheten din og målene dine.' },
+        { num: '02', title: 'Utvikle', desc: 'Vi former konseptet, retningen og de visuelle virkemidlene.' },
+        { num: '03', title: 'Forenkle', desc: 'Vi fjerner det som ikke tjener budskapet.' },
+        { num: '04', title: 'Realisere', desc: 'Vi leverer og følger opp resultatene.' },
+      ],
+      stats: [
+        { value: '120+', label: 'Leverte prosjekter' },
+        { value: '60+', label: 'Fornøyde kunder' },
+        { value: '8', label: 'Års erfaring' },
+        { value: '95%', label: 'Kunder som blir værende' },
+      ],
+      team: [
+        { id: 'team-1', name: 'Erik Nordahl', role: 'Kreativ leder', placeholder: 'Portrett: Erik' },
+        { id: 'team-2', name: 'Maren Vik', role: 'Merkevarestrateg', placeholder: 'Portrett: Maren' },
+        { id: 'team-3', name: 'Thomas Berg', role: 'Fotograf', placeholder: 'Portrett: Thomas' },
+        { id: 'team-4', name: 'Sunniva Aas', role: 'Markedsføringsansvarlig', placeholder: 'Portrett: Sunniva' },
+      ],
+      faqs: [
+        { q: 'Hvor lang tid tar et typisk prosjekt?', a: 'De fleste prosjekter tar mellom fire og åtte uker, avhengig av omfang — fra første samtale til ferdig levert konsept.' },
+        { q: 'Jobber dere med små bedrifter?', a: 'Ja, vi jobber med virksomheter i alle størrelser, fra enkeltpersonforetak til etablerte selskaper.' },
+        { q: 'Kan vi bestille bare fotografi eller bare markedsføring?', a: 'Absolutt. Tjenestene kan bestilles enkeltvis eller kombineres i en helhetlig pakke.' },
+        { q: 'Hvordan kommer vi i gang?', a: 'Book en uforpliktende samtale under, og vi finner sammen ut hva som passer best for din virksomhet.' },
+      ],
+      clients: [
+        { name: 'NORDLYS AS' },
+        { name: 'HAVBRIS' },
+        { name: 'FJELLRO GRUPPEN' },
+        { name: 'BLÅFJORD' },
+        { name: 'VESTKANT' },
+      ],
+      projects: [
+        { id: 'proj-nordlys', title: 'Prosjekt Nordlys', tag: 'MERKEVARE & FOTO', placeholder: 'Bilde: Prosjekt Nordlys', colsSafe: 'minmax(0,1.1fr) minmax(0,1fr)', imgOrder: 1, textOrder: 2 },
+        { id: 'proj-havbris', title: 'Prosjekt Havbris', tag: 'SOSIALE MEDIER', placeholder: 'Bilde: Prosjekt Havbris', colsSafe: 'minmax(0,1fr) minmax(0,1.1fr)', imgOrder: 2, textOrder: 1 },
+        { id: 'proj-fjellro', title: 'Prosjekt Fjellro', tag: 'MARKEDSFØRINGSKAMPANJE', placeholder: 'Bilde: Prosjekt Fjellro', colsSafe: 'minmax(0,1.1fr) minmax(0,1fr)', imgOrder: 1, textOrder: 2 },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
