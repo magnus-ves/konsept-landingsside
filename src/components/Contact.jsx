@@ -5,6 +5,10 @@ import { konseptMark } from '../assets';
 // Formspree form endpoint — sends submissions straight to hei@konsept-media.no.
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwlkzddw';
 
+// Konsept Mini-CRM — legger henvendelsen til automatisk som en ny lead.
+// Feiler stille (skjemaet skal fungere selv om CRM-et er nede).
+const CRM_INTAKE_ENDPOINT = 'https://konsept-crm-alv5.vercel.app/api/public/leads';
+
 export default function Contact() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
@@ -32,6 +36,21 @@ export default function Contact() {
   const onSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
+
+    // Legg henvendelsen til i CRM-et som en ny lead. Kjøres uavhengig av
+    // Formspree/mailto under — skal aldri blokkere eller ødelegge
+    // kontaktskjemaet dersom CRM-et er nede.
+    fetch(CRM_INTAKE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+        services: picked.join(', '),
+      }),
+    }).catch(() => {});
+
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
