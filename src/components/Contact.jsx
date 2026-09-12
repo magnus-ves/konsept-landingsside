@@ -3,9 +3,7 @@ import { contact, serviceOptions } from '../content';
 import { konseptMark } from '../assets';
 
 // Formspree form endpoint — sends submissions straight to hei@konsept-media.no.
-// Create one at formspree.io (verify hei@konsept-media.no as the recipient) and
-// paste its endpoint ID here, e.g. 'https://formspree.io/f/abcd1234'.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_ME';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwlkzddw';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
