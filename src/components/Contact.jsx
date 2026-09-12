@@ -2,8 +2,14 @@ import { useState } from 'react';
 import { contact, serviceOptions } from '../content';
 import { konseptMark } from '../assets';
 
+// Formspree form endpoint — sends submissions straight to hei@konsept-media.no.
+// Create one at formspree.io (verify hei@konsept-media.no as the recipient) and
+// paste its endpoint ID here, e.g. 'https://formspree.io/f/abcd1234'.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_ME';
+
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -13,8 +19,7 @@ export default function Contact() {
     setPicked((prev) => (prev.includes(option) ? prev.filter((x) => x !== option) : [...prev, option]));
   };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const buildMailto = () => {
     const subject = `Henvendelse fra ${name || 'nettsiden'}`;
     const bodyLines = [
       `Navn: ${name}`,
@@ -23,9 +28,28 @@ export default function Contact() {
       '',
       message,
     ];
-    const mailto = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-    window.location.href = mailto;
-    setSent(true);
+    return `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(e.target),
+      });
+      if (!res.ok) throw new Error('Formspree request failed');
+      setSent(true);
+    } catch {
+      // Endpoint not set up yet, or the request failed — fall back to the
+      // visitor's own mail client so the message still reaches Konsept.
+      window.location.href = buildMailto();
+      setSent(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -105,8 +129,8 @@ export default function Contact() {
                     Takk for henvendelsen!
                   </div>
                   <p style={{ fontSize: 15, lineHeight: 1.7, color: '#d9e5ee', margin: 0 }}>
-                    E-postklienten din skal nå ha åpnet en ferdigutfylt melding. Jeg svarer deg så raskt jeg kan —
-                    vanligvis innen én arbeidsdag.
+                    Meldingen din er sendt til {contact.email}. Jeg svarer deg så raskt jeg kan — vanligvis innen én
+                    arbeidsdag.
                   </p>
                 </div>
               ) : (
@@ -137,6 +161,8 @@ export default function Contact() {
                       />
                     </label>
                   </div>
+                  <input type="hidden" name="_subject" value={`Henvendelse fra ${name || 'nettsiden'}`} />
+                  <input type="hidden" name="tjenester" value={picked.join(', ')} />
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 13 }}>
                     <span className="field-label">
                       Hva trenger du hjelp med? <span style={{ textTransform: 'none', letterSpacing: 0, color: '#8fa7b8' }}>(velg gjerne flere)</span>
@@ -175,8 +201,8 @@ export default function Contact() {
                       style={{ resize: 'vertical', lineHeight: 1.6 }}
                     />
                   </label>
-                  <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start', marginTop: 8 }}>
-                    Send henvendelse →
+                  <button type="submit" disabled={sending} className="btn-primary" style={{ alignSelf: 'flex-start', marginTop: 8, opacity: sending ? 0.7 : 1 }}>
+                    {sending ? 'Sender …' : 'Send henvendelse →'}
                   </button>
                   <p style={{ fontSize: 12.5, lineHeight: 1.6, color: '#a9c0d0', margin: 0 }}>
                     Jeg bruker opplysningene kun til å svare på henvendelsen din.

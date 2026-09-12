@@ -51,7 +51,7 @@ export const serviceOptions = [
 ];
 
 export const contact = {
-  email: 'hei@konsept.no',
+  email: 'hei@konsept-media.no',
   phone: '+47 485 00 059',
   phoneHref: '+4748500059',
   place: 'Oslo, Norge',
