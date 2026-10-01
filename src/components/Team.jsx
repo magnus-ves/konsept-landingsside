@@ -4,12 +4,6 @@ export default function Team() {
   return (
     <section style={{ background: 'var(--cream)', color: 'var(--cream-ink)', padding: '130px 56px' }}>
       <div style={{ maxWidth: 1240, margin: '0 auto' }}>
-        <div className="kf-rise" style={{ marginBottom: 64 }}>
-          <span className="eyebrow eyebrow--dark">MENNESKET BAK</span>
-          <h2 className="section-title" style={{ fontSize: 'clamp(32px,4vw,50px)', color: 'var(--cream-ink)' }}>
-            Én person. Full oversikt.
-          </h2>
-        </div>
         <div className="kf-rise" style={{ display: 'flex', gap: 40, alignItems: 'flex-start', flexWrap: 'wrap' }}>
           <div
             className="photo-frame"
