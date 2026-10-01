@@ -12,16 +12,6 @@ export default function About() {
           relevant. Jeg jobber tett med hver kunde, fra første idé til ferdig levert kampanje, og legger vekt på
           løsninger som er enkle å forstå og lette å kjenne igjen.
         </p>
-        <div style={{ display: 'flex', gap: 48, marginTop: 44, flexWrap: 'wrap' }}>
-          <div>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 30, color: '#fff' }}>Oslo</div>
-            <div style={{ fontSize: 14, color: 'var(--ink-dimmer)', marginTop: 6 }}>Base</div>
-          </div>
-          <div>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 30, color: '#fff' }}>Norden</div>
-            <div style={{ fontSize: 14, color: 'var(--ink-dimmer)', marginTop: 6 }}>Nedslagsfelt</div>
-          </div>
-        </div>
       </div>
     </section>
   );
