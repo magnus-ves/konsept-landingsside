@@ -7,7 +7,7 @@ export default function Intro() {
       >
         <h2
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Josefin Sans', sans-serif",
             fontWeight: 500,
             fontSize: 'clamp(34px,4.4vw,56px)',
             lineHeight: 1.06,

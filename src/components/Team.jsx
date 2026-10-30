@@ -24,7 +24,7 @@ export default function Team() {
             />
           </div>
           <div style={{ minWidth: 0, flex: '1 1 380px' }}>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 'clamp(26px,3vw,36px)', letterSpacing: '-.015em', color: 'var(--cream-ink)' }}>
+            <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 500, fontSize: 'clamp(26px,3vw,36px)', letterSpacing: '-.015em', color: 'var(--cream-ink)' }}>
               Magnus Vestre
             </div>
             <div style={{ fontSize: 15, color: 'var(--blue)', marginTop: 8, letterSpacing: '.02em' }}>
@@ -36,15 +36,15 @@ export default function Team() {
             </p>
             <div style={{ display: 'flex', gap: 44, marginTop: 36, flexWrap: 'wrap' }}>
               <div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Foto</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Foto</div>
                 <div style={{ fontSize: 13.5, color: 'var(--cream-dim)', marginTop: 6 }}>Produksjon</div>
               </div>
               <div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Design</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Design</div>
                 <div style={{ fontSize: 13.5, color: 'var(--cream-dim)', marginTop: 6 }}>Merkevare</div>
               </div>
               <div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Strategi</div>
+                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Strategi</div>
                 <div style={{ fontSize: 13.5, color: 'var(--cream-dim)', marginTop: 6 }}>Rådgivning</div>
               </div>
             </div>

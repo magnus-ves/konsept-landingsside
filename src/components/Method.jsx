@@ -40,10 +40,10 @@ export default function Method() {
             >
               <span style={{ width: 9, height: 9, borderRadius: '50%', background: 'var(--blue-light)', display: 'block' }} />
             </div>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, letterSpacing: '.1em', color: 'var(--blue-light)', fontWeight: 600, marginBottom: 10 }}>
+            <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 13, letterSpacing: '.1em', color: 'var(--blue-light)', fontWeight: 600, marginBottom: 10 }}>
               {st.num}
             </div>
-            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 23, color: '#fff', marginBottom: 12 }}>
+            <h3 style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 500, fontSize: 23, color: '#fff', marginBottom: 12 }}>
               {st.title}
             </h3>
             <p style={{ fontSize: 14.5, lineHeight: 1.65, color: 'var(--ink-dimmer)' }}>{st.desc}</p>

@@ -32,10 +32,10 @@ export default function Services() {
                 borderBottom: '1px solid rgba(11,30,45,.14)',
               }}
             >
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, letterSpacing: '.1em', color: 'var(--blue)', fontWeight: 600 }}>
+              <span style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 13, letterSpacing: '.1em', color: 'var(--blue)', fontWeight: 600 }}>
                 {s.num}
               </span>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 'clamp(24px,2.6vw,34px)', letterSpacing: '-.015em', color: 'var(--cream-ink)' }}>
+              <h3 style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 500, fontSize: 'clamp(24px,2.6vw,34px)', letterSpacing: '-.015em', color: 'var(--cream-ink)' }}>
                 {s.title}
               </h3>
               <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--cream-dim)' }}>{s.desc}</p>

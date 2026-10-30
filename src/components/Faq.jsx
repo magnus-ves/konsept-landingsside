@@ -30,7 +30,7 @@ export default function Faq() {
                   padding: '30px 4px',
                   cursor: 'pointer',
                   textAlign: 'left',
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "'Josefin Sans', sans-serif",
                   fontWeight: 500,
                   fontSize: 20,
                   color: '#fff',

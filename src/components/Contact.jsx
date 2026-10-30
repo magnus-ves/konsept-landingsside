@@ -94,7 +94,7 @@ export default function Contact() {
         <div style={{ position: 'relative' }}>
           <h2
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Josefin Sans', sans-serif",
               fontWeight: 500,
               fontSize: 'clamp(38px,5.6vw,72px)',
               letterSpacing: '-.03em',
@@ -142,7 +142,7 @@ export default function Contact() {
             >
               {sent ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, padding: '24px 0' }}>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 26, color: '#fff', letterSpacing: '-.02em' }}>
+                  <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 26, color: '#fff', letterSpacing: '-.02em' }}>
                     Takk for henvendelsen!
                   </div>
                   <p style={{ fontSize: 15, lineHeight: 1.7, color: '#d9e5ee', margin: 0 }}>

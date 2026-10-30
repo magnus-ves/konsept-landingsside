@@ -127,7 +127,7 @@ export default function Hero({ heroShift }) {
         />
         <h1
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Josefin Sans', sans-serif",
             fontWeight: 500,
             fontSize: 'clamp(34px, 4.6vw, 62px)',
             lineHeight: 1.02,

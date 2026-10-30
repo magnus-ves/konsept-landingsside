@@ -43,7 +43,7 @@ export default function Marquee() {
           alignItems: 'center',
           gap: GAP,
           marginRight: GAP,
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "'Josefin Sans', sans-serif",
           fontSize: 15,
           letterSpacing: '.14em',
           color: 'var(--blue-light)',

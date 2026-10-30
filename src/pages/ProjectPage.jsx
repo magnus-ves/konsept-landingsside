@@ -69,7 +69,7 @@ export default function ProjectPage() {
         <Lightbox images={project.images} index={open} title={project.title} onClose={() => setOpen(null)} onChange={setOpen} />
       )}
       <div style={{ marginTop: 90, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24, borderTop: '1px solid rgba(232,238,243,.14)', paddingTop: 40 }}>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 'clamp(22px,2.6vw,30px)', color: '#fff', letterSpacing: '-.015em' }}>
+        <p style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 'clamp(22px,2.6vw,30px)', color: '#fff', letterSpacing: '-.015em' }}>
           Har du et arrangement eller prosjekt?
         </p>
         <a href={homeHref('#kontakt')} className="btn-primary">Book en samtale →</a>

@@ -42,11 +42,11 @@ export default function Work() {
                 ))}
               </div>
               <div style={{ minWidth: 0 }}>
-                <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: 56, color: 'rgba(232,238,243,.22)', lineHeight: 1 }}>
+                <div style={{ fontFamily: "'Old Standard TT', serif", fontSize: 56, color: 'rgba(232,238,243,.22)', lineHeight: 1 }}>
                   {p.idx}
                 </div>
                 <span style={{ fontSize: 12.5, color: 'var(--blue-light)', letterSpacing: '.16em' }}>{p.tag}</span>
-                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 'clamp(28px,3.4vw,42px)', letterSpacing: '-.02em', color: '#fff', margin: '14px 0 18px' }}>
+                <h3 style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 500, fontSize: 'clamp(28px,3.4vw,42px)', letterSpacing: '-.02em', color: '#fff', margin: '14px 0 18px' }}>
                   {p.title}
                 </h3>
                 <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--ink-dim)', margin: '0 0 24px', maxWidth: 420 }}>{p.desc}</p>

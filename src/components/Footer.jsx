@@ -17,7 +17,7 @@ export default function Footer() {
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
         <img src={logoFull} alt="Konsept" style={{ height: 30, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: 'var(--ink-dimmer)' }}>© 2026 KONSEPT</span>
+        <span style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 13, color: 'var(--ink-dimmer)' }}>© 2026 KONSEPT</span>
       </div>
       <div style={{ display: 'flex', gap: 30, fontSize: 13.5 }}>
         <a href={homeHref('#tjenester')} className="footer-link">Tjenester</a>
