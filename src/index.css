@@ -153,10 +153,8 @@ button {
   background: var(--ink);
   color: var(--navy);
   font-weight: 600;
-  translate: var(--mx, 0) var(--my, 0);
-  transition: background .3s ease, translate .25s ease-out;
+  --fill: var(--blue-light);
 }
-.nav-cta:hover { background: var(--blue-light); }
 
 .btn-primary {
   display: inline-flex;
@@ -170,10 +168,8 @@ button {
   font-size: 15px;
   border: none;
   cursor: pointer;
-  translate: var(--mx, 0) var(--my, 0);
-  transition: transform .35s cubic-bezier(.2,.7,.2,1), background .3s ease, translate .25s ease-out;
+  --fill: var(--blue-light);
 }
-.btn-primary:hover { background: var(--blue-pale); transform: translateY(-3px); }
 
 .btn-secondary {
   display: inline-flex;
@@ -185,10 +181,9 @@ button {
   color: var(--ink);
   font-weight: 500;
   font-size: 15px;
-  translate: var(--mx, 0) var(--my, 0);
-  transition: background .3s ease, border-color .3s ease, translate .25s ease-out;
+  --fill: #fff;
 }
-.btn-secondary:hover { background: rgba(232,238,243,.10); border-color: rgba(232,238,243,.6); }
+.btn-secondary:hover { color: var(--navy); border-color: #fff; }
 
 .service-row {
   transition: background .35s ease, padding-left .35s cubic-bezier(.2,.7,.2,1);
@@ -409,10 +404,8 @@ button {
   color: #fff;
   font-weight: 600;
   font-size: 14.5px;
-  translate: var(--mx, 0) var(--my, 0);
-  transition: transform .35s cubic-bezier(.2,.7,.2,1), translate .25s ease-out;
+  --fill: var(--blue);
 }
-.btn-dark:hover { transform: translateY(-3px); }
 
 .contact-link { color: #d9e5ee; transition: color .2s ease; }
 .contact-link:hover { color: #fff; }
@@ -537,3 +530,32 @@ button {
   .method-title { font-size: 26px; }
   .method-desc { max-width: none; }
 }
+
+/* Liquid magnetic buttons (motion driven by useMagnetic) */
+.btn-primary, .btn-secondary, .btn-dark, .nav-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  will-change: translate, transform;
+  box-shadow: 0 14px 42px -12px rgba(127, 165, 192, calc(var(--pull, 0) * 0.9));
+  transition: color .35s ease, border-color .35s ease, box-shadow .3s ease;
+}
+.btn-primary::before, .btn-secondary::before, .btn-dark::before, .nav-cta::before {
+  content: '';
+  position: absolute;
+  left: var(--fx, 50%);
+  top: var(--fy, 50%);
+  width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--fill);
+  translate: -50% -50%;
+  z-index: -1;
+  transition: width .6s cubic-bezier(.2,.7,.2,1);
+}
+.btn-primary:hover::before, .btn-secondary:hover::before, .btn-dark:hover::before, .nav-cta:hover::before,
+.btn-primary:focus-visible::before, .btn-secondary:focus-visible::before, .btn-dark:focus-visible::before, .nav-cta:focus-visible::before {
+  width: 280%;
+}
+.btn-primary:active, .btn-secondary:active, .btn-dark:active, .nav-cta:active { scale: .95; transition: scale .12s ease; }
+.btn-primary:not(:active), .btn-secondary:not(:active), .btn-dark:not(:active), .nav-cta:not(:active) { transition: color .35s ease, border-color .35s ease, box-shadow .3s ease, scale .5s cubic-bezier(.3,1.6,.4,1); }
