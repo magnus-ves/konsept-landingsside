@@ -54,6 +54,7 @@ export default function Nav({ scrolled, progress }) {
           </a>
           <div className="kf-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 34, fontSize: 13.5, letterSpacing: '.02em' }}>
             <a href="#tjenester" className="nav-link">Tjenester</a>
+            <a href="#arbeid" className="nav-link">Arbeid</a>
             <a href="#om" className="nav-link">Om oss</a>
             <a href="#kontakt" className="nav-cta">Book en samtale</a>
           </div>

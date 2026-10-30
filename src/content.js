@@ -1,3 +1,5 @@
+import { cloudcon } from './assets';
+
 export const marquee = [
   'FOTOGRAFI', 'MERKEVARE', 'MARKEDSFØRING', 'SOSIALE MEDIER', 'INNHOLD', 'STRATEGI',
 ];
@@ -20,22 +22,12 @@ export const steps = [
 
 export const projects = [
   {
-    id: 'proj-nordlys',
+    id: 'cloud-con',
     idx: '01',
-    title: 'Norges Livredningsselskap',
-    tag: 'SOME OG INNHOLD',
-    desc: 'Livredningsvideoer egnet for SOME, med instruksjoner om hvordan man bruker livredningsutstyr utplassert på strender i hele landet.',
-    placeholder: 'Bilde: Prosjekt Nordlys',
-    imgFirst: true,
-  },
-  {
-    id: 'proj-havbris',
-    idx: '02',
-    title: 'Generasjon M',
-    tag: 'SOSIALE MEDIER',
-    desc: 'Innholdsproduksjon egnet for SOME og andre kommunikasjonskanaler.',
-    placeholder: 'Bilde: Prosjekt Havbris',
-    imgFirst: false,
+    title: 'Cloud Con 26',
+    tag: 'KONFERANSEFOTO',
+    desc: 'Konferansefoto fra Cloud Con 26, arrangert av Cloud Connection 29. oktober — foredragsholdere på scenen, stemningen på stedet og portretter fra dagen.',
+    images: cloudcon,
   },
 ];
 

@@ -194,6 +194,23 @@ button {
   pointer-events: none;
 }
 
+.gallery {
+  columns: 3;
+  column-gap: 16px;
+}
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 26px 50px -26px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .btn-dark {
   display: inline-flex;
   align-items: center;
@@ -253,6 +270,7 @@ button {
 .footer-link:hover { color: #fff; }
 
 @media (max-width: 1024px) {
+  .gallery { columns: 2; }
   .kf-2col { grid-template-columns: minmax(0, 1fr) !important; gap: 44px !important; }
   .kf-5col { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   section, footer { padding-left: 32px !important; padding-right: 32px !important; }

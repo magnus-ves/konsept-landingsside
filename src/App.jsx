@@ -5,7 +5,7 @@ import Marquee from './components/Marquee';
 import Intro from './components/Intro';
 import Services from './components/Services';
 import Method from './components/Method';
-// import Work from './components/Work'; // temporarily removed — see App.jsx render
+import Work from './components/Work';
 import About from './components/About';
 import Team from './components/Team';
 import Faq from './components/Faq';
@@ -37,7 +37,7 @@ export default function App() {
       <Intro />
       <Services />
       <Method />
-      {/* <Work /> — temporarily removed */}
+      <Work />
       <About />
       <Team />
       <Faq />
