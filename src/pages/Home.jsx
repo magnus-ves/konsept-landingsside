@@ -4,7 +4,7 @@ import Intro from '../components/Intro';
 import Services from '../components/Services';
 import Method from '../components/Method';
 import Work from '../components/Work';
-import CaseTeaser from '../components/CaseTeaser';
+// import CaseTeaser from '../components/CaseTeaser';
 import About from '../components/About';
 import Team from '../components/Team';
 import Faq from '../components/Faq';
@@ -19,7 +19,7 @@ export default function Home({ heroShift }) {
       <Services />
       <Method />
       <Work />
-      <CaseTeaser />
+      {/* Konseptlab hidden for now: <CaseTeaser /> */}
       <About />
       <Team />
       <Faq />
