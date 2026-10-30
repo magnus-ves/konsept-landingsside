@@ -49,7 +49,7 @@ export const projects = [
     idx: '03',
     title: 'Agaia',
     tag: 'PROFILBILDE',
-    desc: 'Profilbilder for Agaia — portretter tatt utendørs i naturlig kveldslys.',
+    desc: 'Profilbilde for Agaia.',
     // card trio on the home page: wide, tall, small
     covers: [agaia[1], agaia[0], agaia[2]],
     images: agaia,
