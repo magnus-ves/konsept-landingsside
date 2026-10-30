@@ -27,12 +27,12 @@ export default function Work() {
           <span style={{ fontSize: 14, color: 'var(--ink-dimmer)' }}>2026</span>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 130 }}>
-          {projects.map((p, n) => (
+          {projects.map((p) => (
             <Link
               key={p.id}
               to={`/prosjekter/${p.slug}`}
-              className={`kf-rise kf-2col project-card${n % 2 ? ' project-card--flip' : ''}`}
-              style={{ display: 'grid', gridTemplateColumns: n % 2 ? 'minmax(0,1fr) minmax(0,1.15fr)' : 'minmax(0,1.15fr) minmax(0,1fr)', gap: 56, alignItems: 'center' }}
+              className={`kf-rise kf-2col project-card${p.stacked ? ' project-card--stacked' : ''}`}
+              style={{ display: 'grid', gridTemplateColumns: p.stacked ? 'minmax(0,1fr)' : 'minmax(0,1.15fr) minmax(0,1fr)', gap: p.stacked ? 72 : 56, alignItems: 'center' }}
             >
               <div className="trio" aria-hidden="true">
                 {p.covers.map((c, i) => (
