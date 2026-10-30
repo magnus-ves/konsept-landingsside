@@ -1,8 +1,33 @@
+import { useEffect, useRef } from 'react';
 import { marquee } from '../content';
 
 const GAP = 56;
 
 export default function Marquee() {
+  const trackRef = useRef(null);
+
+  // The band speeds up with scroll velocity, then eases back to cruising speed.
+  useEffect(() => {
+    const anim = trackRef.current?.getAnimations()[0];
+    if (!anim) return undefined;
+    let last = window.scrollY;
+    let lastT = performance.now();
+    let boost = 0;
+    let raf = 0;
+    const tick = () => {
+      const now = performance.now();
+      const dy = Math.abs(window.scrollY - last);
+      const v = dy / Math.max(now - lastT, 1);
+      last = window.scrollY;
+      lastT = now;
+      boost = Math.max(boost * 0.94, Math.min(v * 1.6, 7));
+      anim.playbackRate = 1 + boost;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   // Rendered as two identical copies back-to-back, animated by exactly
   // -50% of the row's own width so the loop is seamless. That only lands
   // precisely on the repeat boundary if each copy's width is self-contained
@@ -40,7 +65,7 @@ export default function Marquee() {
         background: 'var(--navy)',
       }}
     >
-      <div className="kf-marq" style={{ display: 'flex', width: 'max-content', alignItems: 'center' }}>
+      <div ref={trackRef} className="kf-marq" style={{ display: 'flex', width: 'max-content', alignItems: 'center' }}>
         {copy('a')}
         {copy('b')}
       </div>

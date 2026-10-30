@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { projects } from '../content';
 import { homeHref } from '../lib/home';
+import Lightbox from '../components/Lightbox';
 
 export default function ProjectPage() {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
+  const [open, setOpen] = useState(null);
 
   useEffect(() => {
     if (!project) return undefined;
@@ -46,11 +48,14 @@ export default function ProjectPage() {
       </div>
       <div className="gallery">
         {project.images.map((img, i) => (
-          <div key={img.src} className="gallery-item">
+          <button key={img.src} type="button" className="gallery-item" onClick={() => setOpen(i)} aria-label={`Åpne bilde ${i + 1} i full størrelse`}>
             <img src={img.src} width={img.width} height={img.height} alt={`${project.title} — bilde ${i + 1}`} loading="lazy" />
-          </div>
+          </button>
         ))}
       </div>
+      {open !== null && (
+        <Lightbox images={project.images} index={open} title={project.title} onClose={() => setOpen(null)} onChange={setOpen} />
+      )}
       <div style={{ marginTop: 90, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24, borderTop: '1px solid rgba(232,238,243,.14)', paddingTop: 40 }}>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 'clamp(22px,2.6vw,30px)', color: '#fff', letterSpacing: '-.015em' }}>
           Har du et arrangement eller prosjekt?

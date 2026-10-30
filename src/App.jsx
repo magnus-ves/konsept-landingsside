@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
+import useMagnetic from './lib/useMagnetic';
 
 export default function App() {
+  const { pathname } = useLocation();
+  useMagnetic();
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
   const [heroShift, setHeroShift] = useState(0);
@@ -27,11 +30,13 @@ export default function App() {
     <div style={{ position: 'relative' }}>
       <ScrollToTop />
       <Nav scrolled={scrolled} progress={progress} />
+      <div key={pathname} className="page-enter">
       <Routes>
         <Route path="/" element={<Home heroShift={heroShift} />} />
         <Route path="/prosjekter/:slug" element={<ProjectPage />} />
         <Route path="*" element={<ProjectPage />} />
       </Routes>
+      </div>
       <Footer />
     </div>
   );

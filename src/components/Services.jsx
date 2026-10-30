@@ -39,7 +39,7 @@ export default function Services() {
                 {s.title}
               </h3>
               <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--cream-dim)' }}>{s.desc}</p>
-              <span style={{ fontSize: 20, color: 'var(--blue)', justifySelf: 'end' }}>→</span>
+              <span className="service-arrow" style={{ fontSize: 20, color: 'var(--blue)', justifySelf: 'end' }}>→</span>
             </div>
           ))}
         </div>
