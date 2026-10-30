@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { konseptMark } from '../assets';
 
-const COVER_MS = 560;
-const REVEAL_MS = 800;
+const COVER_MS = 280;
+const REVEAL_MS = 420;
 
-// Curtain between pages: internal link clicks are caught before React Router
-// handles them, the curtain rises over the old page, the route changes behind
-// it, and the curtain lifts off the new page. Same-page anchors are left alone.
+// Fade between pages: internal link clicks are caught before React Router
+// handles them, the old page fades out, the route changes, and the new page
+// fades in. Same-page anchors are left alone.
 export default function PageTransition() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -66,8 +65,6 @@ export default function PageTransition() {
 
   if (phase === 'idle') return null;
   return (
-    <div className={`curtain curtain--${phase}`} aria-hidden="true">
-      <img src={konseptMark} alt="" className="curtain-mark" />
-    </div>
+    <div className={`curtain curtain--${phase}`} aria-hidden="true" />
   );
 }

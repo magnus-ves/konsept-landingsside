@@ -224,7 +224,7 @@ button {
 @keyframes wordUp { to { transform: translateY(0); } }
 
 .page-enter { animation: pageIn .6s cubic-bezier(.2,.7,.2,1) backwards; }
-@keyframes pageIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
 
 .service-arrow { transition: transform .35s cubic-bezier(.2,.7,.2,1), color .3s ease; }
 .service-row:hover .service-arrow { transform: translateX(10px); color: var(--cream-ink); }
@@ -606,40 +606,14 @@ html.lg-refract .btn-primary, html.lg-refract .btn-secondary, html.lg-refract .b
   backdrop-filter: url(#lg-lens) blur(3px) saturate(180%) brightness(1.08);
 }
 
-/* Page transition curtain */
+/* Page transition: fade through the page background */
 .curtain {
   position: fixed;
   inset: 0;
   z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    radial-gradient(60% 50% at 50% 55%, rgba(63, 109, 143, 0.45), transparent 70%),
-    var(--navy);
+  background: var(--navy);
 }
-.curtain-mark {
-  width: clamp(70px, 9vw, 120px);
-  height: auto;
-  filter: brightness(0) invert(1);
-}
-.curtain--cover { animation: curtainIn 0.56s cubic-bezier(0.76, 0, 0.24, 1) both; }
-.curtain--cover .curtain-mark { animation: markIn 0.56s cubic-bezier(0.2, 0.7, 0.2, 1) 0.12s both; }
-.curtain--reveal { animation: curtainOut 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.08s both; }
-.curtain--reveal .curtain-mark { animation: markOut 0.4s ease both; }
-@keyframes curtainIn {
-  from { clip-path: inset(100% 0 0 0 round 40% 40% 0 0); }
-  to { clip-path: inset(0 0 0 0 round 0); }
-}
-@keyframes curtainOut {
-  from { clip-path: inset(0 0 0 0 round 0); }
-  to { clip-path: inset(0 0 100% 0 round 0 0 40% 40%); }
-}
-@keyframes markIn {
-  from { opacity: 0; transform: translateY(24px) scale(0.85); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes markOut {
-  from { opacity: 1; transform: none; }
-  to { opacity: 0; transform: translateY(-24px) scale(0.9); }
-}
+.curtain--cover { animation: fadeCover 0.28s ease both; }
+.curtain--reveal { animation: fadeReveal 0.42s ease both; }
+@keyframes fadeCover { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeReveal { from { opacity: 1; } to { opacity: 0; } }
