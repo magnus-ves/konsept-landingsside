@@ -70,16 +70,16 @@ import utiMarka from './uti/uti-marka.jpg';
 import utiIngierstrand from './uti/uti-ingierstrand.jpg';
 import utiInput from './uti/uti-input.jpg';
 import utiSti from './uti/uti-sti.jpg';
-import utiLogo from './uti/uti-logo.png';
-import utiSymbol from './uti/uti-symbol.png';
+import utiLogo from './uti/uti-logo.svg';
+import utiSymbol from './uti/uti-symbol.svg';
 
 // UTI.no case. Campaign posts are full squares that already carry their own
 // frame and logo, so they sit straight on the page background.
 export const uti = {
   hero: { src: utiHeroImg, width: 1600, height: 1064 },
   sti: { src: utiSti, width: 1200, height: 943 },
-  logo: { src: utiLogo, width: 653, height: 457 },
-  symbol: { src: utiSymbol, width: 315, height: 457 },
+  logo: { src: utiLogo, width: 1043, height: 457 },
+  symbol: { src: utiSymbol, width: 196, height: 288 },
   campaign: [
     { src: utiMarka, width: 1400, height: 1400, alt: 'Kampanjepost: «Hva med en tur uti marka?» over en sti i skogen' },
     { src: utiIngierstrand, width: 1400, height: 1400, alt: 'Kampanjepost: «Hva med en tur ut til Ingierstrand?»' },
