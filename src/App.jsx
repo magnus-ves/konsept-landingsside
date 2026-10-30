@@ -3,7 +3,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import GlassFilter from './components/GlassFilter';
 import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
@@ -32,7 +31,6 @@ export default function App() {
   return (
     <div style={{ position: 'relative' }}>
       <ScrollToTop />
-      <GlassFilter />
       <PageTransition />
       <Nav scrolled={scrolled || pathname.startsWith('/case')} progress={progress} />
       <div key={pathname} className="page-enter">
