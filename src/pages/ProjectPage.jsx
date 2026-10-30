@@ -46,12 +46,23 @@ export default function ProjectPage() {
         </div>
         <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--ink-dim)', maxWidth: 480 }}>{project.desc}</p>
       </div>
-      <div className="gallery">
-        {project.images.map((img, i) => (
-          <button key={img.src} type="button" className="gallery-item" onClick={() => setOpen(i)} aria-label={`Åpne bilde ${i + 1} i full størrelse`}>
-            <img src={img.src} width={img.width} height={img.height} alt={`${project.title} — bilde ${i + 1}`} loading="lazy" />
-          </button>
-        ))}
+      <div className="collage-wrap">
+        <div className="collage-word serif-italic" aria-hidden="true">{project.title}</div>
+        <div className="collage">
+          {project.images.map((img, i) => (
+            <button
+              key={img.src}
+              type="button"
+              className="collage-item"
+              style={{ '--col': img.col, '--mt': img.mt, aspectRatio: `${img.width} / ${img.height}` }}
+              onClick={() => setOpen(i)}
+              aria-label={`Åpne bilde ${i + 1} i full størrelse`}
+            >
+              <img src={img.src} width={img.width} height={img.height} alt={`${project.title} — bilde ${i + 1}`} loading="lazy" />
+              <span className="collage-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            </button>
+          ))}
+        </div>
       </div>
       {open !== null && (
         <Lightbox images={project.images} index={open} title={project.title} onClose={() => setOpen(null)} onChange={setOpen} />

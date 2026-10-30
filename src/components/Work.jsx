@@ -34,18 +34,12 @@ export default function Work() {
               className="kf-rise kf-2col project-card"
               style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,1fr)', gap: 56, alignItems: 'center' }}
             >
-              <div
-                className="project-media"
-                style={{ minWidth: 0, aspectRatio: '16/10', overflow: 'hidden', borderRadius: 3, boxShadow: '0 26px 50px -26px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.06)' }}
-              >
-                <img
-                  src={p.cover.src}
-                  width={p.cover.width}
-                  height={p.cover.height}
-                  alt={`${p.title} — forhåndsvisning`}
-                  loading="lazy"
-                  style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+              <div className="trio" aria-hidden="true">
+                {p.covers.map((c, i) => (
+                  <div key={c.src} className={`trio-frame trio-${i + 1}`}>
+                    <img src={c.src} width={c.width} height={c.height} alt="" loading="lazy" />
+                  </div>
+                ))}
               </div>
               <div style={{ minWidth: 0 }}>
                 <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: 56, color: 'rgba(232,238,243,.22)', lineHeight: 1 }}>

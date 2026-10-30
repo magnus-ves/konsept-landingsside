@@ -28,7 +28,8 @@ export const projects = [
     title: 'Cloud Con 26',
     tag: 'KONFERANSEFOTO',
     desc: 'Konferansefoto fra Cloud Con 26, arrangert av Cloud Connection 29. oktober — foredragsholdere på scenen, stemningen på stedet og portretter fra dagen.',
-    cover: cloudcon[4],
+    // card trio on the home page: wide, tall, small
+    covers: [cloudcon[1], cloudcon[0], cloudcon[6]],
     images: cloudcon,
   },
 ];
