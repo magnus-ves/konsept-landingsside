@@ -10,6 +10,9 @@ import cloudcon4 from './cloudcon/cloudcon-4.jpg';
 import cloudcon5 from './cloudcon/cloudcon-5.jpg';
 import cloudcon6 from './cloudcon/cloudcon-6.jpg';
 import cloudcon7 from './cloudcon/cloudcon-7.jpg';
+import cloudcon8 from './cloudcon/cloudcon-8.jpg';
+import cloudcon9 from './cloudcon/cloudcon-9.jpg';
+import cloudcon10 from './cloudcon/cloudcon-10.jpg';
 
 // In collage reading order (the lightbox follows it). col/mt place each photo
 // in the project-page collage: a 12-column grid, rows run top to bottom.
@@ -20,7 +23,10 @@ export const cloudcon = [
   { src: cloudcon2, width: 1600, height: 1067, col: '7 / 13', mt: '-150px' },
   { src: cloudcon6, width: 1600, height: 1066, col: '1 / 8', mt: '40px' },
   { src: cloudcon3, width: 1066, height: 1600, col: '9 / 12', mt: '90px', half: true },
-  { src: cloudcon7, width: 1066, height: 1600, col: '4 / 9', mt: '40px' },
+  { src: cloudcon8, width: 1066, height: 1600, col: '1 / 5', mt: '40px', half: true },
+  { src: cloudcon7, width: 1066, height: 1600, col: '6 / 10', mt: '140px', half: true },
+  { src: cloudcon9, width: 1072, height: 1600, col: '2 / 6', mt: '20px', half: true },
+  { src: cloudcon10, width: 1070, height: 1600, col: '8 / 12', mt: '120px', half: true },
 ];
 
 import gm1 from './generasjonm/gm-1.jpg';
