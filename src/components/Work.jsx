@@ -31,8 +31,8 @@ export default function Work() {
             <Link
               key={p.id}
               to={`/prosjekter/${p.slug}`}
-              className={`kf-rise kf-2col project-card${p.stacked ? ' project-card--stacked' : ''}`}
-              style={{ display: 'grid', gridTemplateColumns: p.stacked ? 'minmax(0,1fr)' : 'minmax(0,1.15fr) minmax(0,1fr)', gap: p.stacked ? 72 : 56, alignItems: 'center' }}
+              className="kf-rise kf-2col project-card"
+              style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,1fr)', gap: 56, alignItems: 'center' }}
             >
               <div className="trio" aria-hidden="true">
                 {p.covers.map((c, i) => (

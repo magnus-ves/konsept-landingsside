@@ -286,7 +286,6 @@ button {
 
 
 .project-card { color: inherit; }
-.project-card--stacked .trio { width: min(100%, 780px); }
 .project-link {
   display: inline-flex;
   align-items: center;

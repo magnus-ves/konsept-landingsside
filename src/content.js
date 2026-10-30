@@ -35,7 +35,6 @@ export const projects = [
   {
     id: 'generasjon-m',
     slug: 'generasjon-m',
-    stacked: true, // home card: photos above the text
     idx: '02',
     title: 'Generasjon M',
     tag: 'SOSIALE MEDIER',
