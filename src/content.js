@@ -49,9 +49,9 @@ export const projects = [
     idx: '03',
     title: 'Profilbilde for ny administrerende direktør i Agaia',
     tag: 'PROFILBILDE',
-    desc: 'Profilbilde for Agaia.',
-    // card trio on the home page: wide, tall, small
-    covers: [agaia[1], agaia[0], agaia[2]],
+    desc: 'Portretter av Agaias nye administrerende direktør, tatt utendørs i mykt kveldslys.',
+    // home card: wide + tall only
+    covers: [agaia[1], agaia[0]],
     images: agaia,
   },
 ];
