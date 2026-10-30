@@ -24,6 +24,7 @@ export default function Work() {
               Utvalgte prosjekter
             </h2>
           </div>
+          <span style={{ fontSize: 14, color: 'var(--ink-dimmer)' }}>2026</span>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 130 }}>
           {projects.map((p, n) => (
