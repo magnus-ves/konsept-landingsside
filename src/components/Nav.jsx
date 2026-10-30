@@ -1,4 +1,5 @@
 import { logoFull } from '../assets';
+import { homeHref } from '../lib/home';
 
 export default function Nav({ scrolled, progress }) {
   return (
@@ -45,7 +46,7 @@ export default function Nav({ scrolled, progress }) {
             transition: 'all .45s cubic-bezier(.2,.7,.2,1)',
           }}
         >
-          <a href="#" style={{ display: 'flex', alignItems: 'center' }}>
+          <a href={homeHref('')} style={{ display: 'flex', alignItems: 'center' }}>
             <img
               src={logoFull}
               alt="Konsept"
@@ -53,10 +54,10 @@ export default function Nav({ scrolled, progress }) {
             />
           </a>
           <div className="kf-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 34, fontSize: 13.5, letterSpacing: '.02em' }}>
-            <a href="#tjenester" className="nav-link">Tjenester</a>
-            <a href="#arbeid" className="nav-link">Arbeid</a>
-            <a href="#om" className="nav-link">Om oss</a>
-            <a href="#kontakt" className="nav-cta">Book en samtale</a>
+            <a href={homeHref('#tjenester')} className="nav-link">Tjenester</a>
+            <a href={homeHref('#arbeid')} className="nav-link">Arbeid</a>
+            <a href={homeHref('#om')} className="nav-link">Om oss</a>
+            <a href={homeHref('#kontakt')} className="nav-cta">Book en samtale</a>
           </div>
         </div>
       </nav>

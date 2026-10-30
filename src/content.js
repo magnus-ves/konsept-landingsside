@@ -23,10 +23,12 @@ export const steps = [
 export const projects = [
   {
     id: 'cloud-con',
+    slug: 'cloud-con',
     idx: '01',
     title: 'Cloud Con 26',
     tag: 'KONFERANSEFOTO',
     desc: 'Konferansefoto fra Cloud Con 26, arrangert av Cloud Connection 29. oktober — foredragsholdere på scenen, stemningen på stedet og portretter fra dagen.',
+    cover: cloudcon[4],
     images: cloudcon,
   },
 ];

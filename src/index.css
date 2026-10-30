@@ -211,6 +211,22 @@ button {
   height: auto;
 }
 
+.project-card { color: inherit; }
+.project-media img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.project-card:hover .project-media img { transform: scale(1.04); }
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--blue-light);
+  border-bottom: 1px solid rgba(127,165,192,.4);
+  padding-bottom: 4px;
+}
+
+.back-link { font-size: 14.5px; color: var(--blue-light); transition: color .2s ease; }
+.back-link:hover { color: #fff; }
+
 .btn-dark {
   display: inline-flex;
   align-items: center;

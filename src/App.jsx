@@ -1,16 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
-import Hero from './components/Hero';
-import Marquee from './components/Marquee';
-import Intro from './components/Intro';
-import Services from './components/Services';
-import Method from './components/Method';
-import Work from './components/Work';
-import About from './components/About';
-import Team from './components/Team';
-import Faq from './components/Faq';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import ProjectPage from './pages/ProjectPage';
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,17 +25,13 @@ export default function App() {
 
   return (
     <div style={{ position: 'relative' }}>
+      <ScrollToTop />
       <Nav scrolled={scrolled} progress={progress} />
-      <Hero heroShift={heroShift} />
-      <Marquee />
-      <Intro />
-      <Services />
-      <Method />
-      <Work />
-      <About />
-      <Team />
-      <Faq />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home heroShift={heroShift} />} />
+        <Route path="/prosjekter/:slug" element={<ProjectPage />} />
+        <Route path="*" element={<ProjectPage />} />
+      </Routes>
       <Footer />
     </div>
   );

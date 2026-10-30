@@ -1,4 +1,5 @@
 import { logoFull } from '../assets';
+import { homeHref } from '../lib/home';
 
 export default function Footer() {
   return (
@@ -19,10 +20,10 @@ export default function Footer() {
         <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: 'var(--ink-dimmer)' }}>© 2026 KONSEPT</span>
       </div>
       <div style={{ display: 'flex', gap: 30, fontSize: 13.5 }}>
-        <a href="#tjenester" className="footer-link">Tjenester</a>
-        <a href="#om" className="footer-link">Om oss</a>
-        <a href="#arbeid" className="footer-link">Arbeid</a>
-        <a href="#kontakt" className="footer-link">Kontakt</a>
+        <a href={homeHref('#tjenester')} className="footer-link">Tjenester</a>
+        <a href={homeHref('#om')} className="footer-link">Om oss</a>
+        <a href={homeHref('#arbeid')} className="footer-link">Arbeid</a>
+        <a href={homeHref('#kontakt')} className="footer-link">Kontakt</a>
       </div>
     </footer>
   );
