@@ -482,7 +482,7 @@ button {
 .method {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 160px 56px;
+  padding: 110px 56px;
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: 64px;
@@ -497,13 +497,13 @@ button {
   display: flex;
   align-items: baseline;
   gap: 14px;
-  margin-top: 56px;
+  margin-top: 36px;
   line-height: 0.85;
 }
 .method-counter-n {
   font-family: 'Old Standard TT', serif;
   font-style: italic;
-  font-size: clamp(120px, 15vw, 210px);
+  font-size: clamp(80px, 8vw, 116px);
   color: var(--blue-light);
   letter-spacing: -0.04em;
   animation: methodNum 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
@@ -519,7 +519,7 @@ button {
   to { opacity: 1; transform: none; filter: none; }
 }
 .method-bar {
-  margin-top: 36px;
+  margin-top: 24px;
   height: 2px;
   max-width: 280px;
   background: rgba(232, 238, 243, 0.14);
@@ -552,8 +552,7 @@ button {
 .method-track span { transform-origin: center top; }
 .method-step {
   position: relative;
-  padding: 26px 0 26px;
-  min-height: 30vh;
+  padding: 16px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -586,36 +585,33 @@ button {
 .method-num {
   font-family: 'Old Standard TT', serif;
   font-style: italic;
-  font-size: 22px;
+  font-size: 17px;
   color: var(--blue-light);
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 .method-title {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 500;
-  font-size: clamp(44px, 6vw, 84px);
+  font-size: clamp(28px, 2.8vw, 38px);
   line-height: 1;
   letter-spacing: -0.025em;
   color: #fff;
-  margin: 0 0 18px;
-  transition: color 0.5s ease, translate 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
-  translate: -10px 0;
+  margin: 0 0 6px;
+  transition: color 0.5s ease;
 }
-.method-step.is-active .method-title,
-.method-step.is-done .method-title { translate: 0 0; }
 .method-desc {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 15.5px;
+  line-height: 1.55;
   color: var(--ink-dim);
   margin: 0;
-  max-width: 30ch;
+  max-width: 40ch;
   transition: opacity 0.5s ease;
 }
 
 @media (max-width: 760px) {
   .method {
     grid-template-columns: minmax(0, 1fr);
-    padding: 100px 20px 80px;
+    padding: 80px 20px 60px;
     gap: 24px;
   }
   .method-aside { position: static; }
@@ -624,9 +620,9 @@ button {
   .method-list { padding-left: 40px; }
   .method-track { left: 6px; }
   .method-dot { left: -40px; }
-  .method-step { min-height: 0; padding: 34px 0; }
-  .method-title { font-size: 44px; }
-  .method-desc { font-size: 16.5px; }
+  .method-step { padding: 14px 0; }
+  .method-title { font-size: 28px; }
+  .method-desc { font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .method-counter-n { animation: none; }
