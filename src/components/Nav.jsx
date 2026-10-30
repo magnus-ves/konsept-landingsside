@@ -56,6 +56,7 @@ export default function Nav({ scrolled, progress }) {
           <div className="kf-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 34, fontSize: 13.5, letterSpacing: '.02em' }}>
             <a href={homeHref('#tjenester')} className="nav-link">Tjenester</a>
             <a href={homeHref('#arbeid')} className="nav-link">Arbeid</a>
+            <a href={homeHref('#konseptlab')} className="nav-link">Konseptlab</a>
             <a href={homeHref('#om')} className="nav-link">Om oss</a>
             <a href={homeHref('#kontakt')} className="nav-cta">Book en samtale</a>
           </div>
