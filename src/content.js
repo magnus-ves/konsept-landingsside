@@ -47,7 +47,7 @@ export const projects = [
     id: 'agaia',
     slug: 'agaia',
     idx: '03',
-    title: 'Agaia',
+    title: 'Profilbilde for ny administrerende direktør i Agaia',
     tag: 'PROFILBILDE',
     desc: 'Profilbilde for Agaia.',
     // card trio on the home page: wide, tall, small
