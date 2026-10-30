@@ -47,3 +47,14 @@ export const generasjonM = [
   { src: gm9, width: 1066, height: 1600, col: '2 / 6', mt: '40px', half: true },
   { src: gm10, width: 1066, height: 1600, col: '8 / 12', mt: '120px', half: true },
 ];
+
+import agaia1 from './agaia/agaia-1.jpg';
+import agaia2 from './agaia/agaia-2.jpg';
+import agaia3 from './agaia/agaia-3.jpg';
+
+// Agaia, in collage reading order.
+export const agaia = [
+  { src: agaia1, width: 899, height: 1600, col: '1 / 5', mt: '0px', half: true },
+  { src: agaia2, width: 1600, height: 899, col: '6 / 13', mt: '160px' },
+  { src: agaia3, width: 899, height: 1600, col: '8 / 12', mt: '-100px', half: true },
+];
