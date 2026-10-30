@@ -477,3 +477,25 @@ button {
   .kf-nav-links { gap: 14px !important; font-size: 12px !important; flex-wrap: wrap; justify-content: flex-end; }
   .kf-nav-links a:last-child { padding: 9px 15px !important; }
 }
+
+/* Hvordan jeg arbeider */
+.method-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); position: relative; }
+.method-line { position: absolute; top: 13px; left: 0; right: 0; height: 1px; background: rgba(232,238,243,.22); z-index: 0; transform-origin: left center; }
+.method-step { position: relative; padding-right: 32px; z-index: 1; }
+.method-dot { width: 27px; height: 27px; border-radius: 50%; border: 1px solid rgba(232,238,243,.4); background: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: 30px; }
+.method-dot span { width: 9px; height: 9px; border-radius: 50%; background: var(--blue-light); display: block; }
+.method-num { font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .1em; color: var(--blue-light); font-weight: 600; margin-bottom: 10px; }
+.method-title { font-family: 'Josefin Sans', sans-serif; font-weight: 500; font-size: 23px; color: #fff; margin: 0 0 12px; }
+.method-desc { font-size: 14.5px; line-height: 1.65; color: var(--ink-dimmer); margin: 0; }
+
+@media (max-width: 760px) {
+  .method { padding-top: 100px !important; padding-bottom: 100px !important; }
+  .method > .kf-rise:first-child { margin-bottom: 48px !important; }
+  .method-steps { grid-template-columns: minmax(0, 1fr); row-gap: 40px; }
+  .method-line { display: none; }
+  .method-step:not(:last-child)::after { content: ''; position: absolute; left: 13px; top: 27px; bottom: -40px; width: 1px; background: rgba(232,238,243,.22); }
+  .method-step { display: grid; grid-template-columns: 27px minmax(0, 1fr); column-gap: 22px; padding-right: 0; }
+  .method-dot { margin-bottom: 0; }
+  .method-num { margin-top: 6px; }
+  .method-desc { font-size: 15.5px; max-width: 34ch; }
+}
