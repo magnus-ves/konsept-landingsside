@@ -31,6 +31,8 @@ import gm5 from './generasjonm/gm-5.jpg';
 import gm6 from './generasjonm/gm-6.jpg';
 import gm7 from './generasjonm/gm-7.jpg';
 import gm8 from './generasjonm/gm-8.jpg';
+import gm9 from './generasjonm/gm-9.jpg';
+import gm10 from './generasjonm/gm-10.jpg';
 
 // Generasjon M, in collage reading order. `half` = pairs side by side on mobile.
 export const generasjonM = [
@@ -42,4 +44,6 @@ export const generasjonM = [
   { src: gm6, width: 1600, height: 1064, col: '6 / 13', mt: '80px' },
   { src: gm7, width: 1066, height: 1600, col: '4 / 8', mt: '20px', half: true },
   { src: gm8, width: 1600, height: 1280, col: '8 / 13', mt: '100px' },
+  { src: gm9, width: 1066, height: 1600, col: '2 / 6', mt: '40px', half: true },
+  { src: gm10, width: 1066, height: 1600, col: '8 / 12', mt: '120px', half: true },
 ];
