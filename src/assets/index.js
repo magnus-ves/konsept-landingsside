@@ -78,7 +78,7 @@ import utiSymbol from './uti/uti-symbol.svg';
 export const uti = {
   hero: { src: utiHeroImg, width: 1600, height: 1064 },
   sti: { src: utiSti, width: 1200, height: 943 },
-  logo: { src: utiLogo, width: 1400, height: 587 },
+  logo: { src: utiLogo, width: 1368, height: 575 },
   symbol: { src: utiSymbol, width: 196, height: 288 },
   campaign: [
     { src: utiMarka, width: 1400, height: 1400, alt: 'Kampanjepost: «Hva med en tur uti marka?» over en sti i skogen' },
