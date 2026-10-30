@@ -599,3 +599,47 @@ button {
 .btn-primary:not(:active), .btn-secondary:not(:active), .btn-dark:not(:active), .nav-cta:not(:active) {
   transition: background 0.4s ease, color 0.3s ease, filter 0.4s ease, scale 0.6s cubic-bezier(.3, 1.7, .4, 1);
 }
+
+/* Chromium only: bend the backdrop at the edges like a glass lens */
+html.lg-refract .btn-primary, html.lg-refract .btn-secondary, html.lg-refract .btn-dark, html.lg-refract .nav-cta {
+  -webkit-backdrop-filter: url(#lg-lens) blur(3px) saturate(180%) brightness(1.08);
+  backdrop-filter: url(#lg-lens) blur(3px) saturate(180%) brightness(1.08);
+}
+
+/* Page transition curtain */
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(60% 50% at 50% 55%, rgba(63, 109, 143, 0.45), transparent 70%),
+    var(--navy);
+}
+.curtain-mark {
+  width: clamp(70px, 9vw, 120px);
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.curtain--cover { animation: curtainIn 0.56s cubic-bezier(0.76, 0, 0.24, 1) both; }
+.curtain--cover .curtain-mark { animation: markIn 0.56s cubic-bezier(0.2, 0.7, 0.2, 1) 0.12s both; }
+.curtain--reveal { animation: curtainOut 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.08s both; }
+.curtain--reveal .curtain-mark { animation: markOut 0.4s ease both; }
+@keyframes curtainIn {
+  from { clip-path: inset(100% 0 0 0 round 40% 40% 0 0); }
+  to { clip-path: inset(0 0 0 0 round 0); }
+}
+@keyframes curtainOut {
+  from { clip-path: inset(0 0 0 0 round 0); }
+  to { clip-path: inset(0 0 100% 0 round 0 0 40% 40%); }
+}
+@keyframes markIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.85); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes markOut {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(-24px) scale(0.9); }
+}
