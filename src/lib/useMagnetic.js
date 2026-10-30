@@ -61,15 +61,18 @@ export default function useMagnetic() {
         s.y += s.vy;
 
         const speed = Math.hypot(s.vx, s.vy);
-        const stretch = Math.min(speed * 0.018, 0.16);
+        const stretch = Math.min(speed * 0.022, 0.2);
         const angle = Math.atan2(s.vy, s.vx);
         const settled = Math.abs(tx - s.x) < 0.05 && Math.abs(ty - s.y) < 0.05 && speed < 0.05;
         if (!settled) moving = true;
 
         el.style.translate = `${s.x.toFixed(2)}px ${s.y.toFixed(2)}px`;
+        // Glass grows a little as the cursor nears, and stretches like jelly
+        // along its direction of travel.
+        const grow = 1 + pull * 0.06;
         el.style.transform =
-          stretch > 0.002
-            ? `rotate(${angle}rad) scale(${1 + stretch}, ${1 - stretch * 0.6}) rotate(${-angle}rad)`
+          stretch > 0.002 || pull > 0.001
+            ? `rotate(${angle}rad) scale(${(grow * (1 + stretch)).toFixed(4)}, ${(grow * (1 - stretch * 0.6)).toFixed(4)}) rotate(${-angle}rad)`
             : '';
         el.style.setProperty('--pull', pull.toFixed(3));
         el.style.setProperty('--fx', `${(((px - (r.left)) / r.width) * 100).toFixed(1)}%`);
