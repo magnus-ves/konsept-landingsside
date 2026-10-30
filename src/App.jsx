@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
+import UtiCase from './pages/UtiCase';
 import useMagnetic from './lib/useMagnetic';
 
 export default function App() {
@@ -29,10 +30,11 @@ export default function App() {
   return (
     <div style={{ position: 'relative' }}>
       <ScrollToTop />
-      <Nav scrolled={scrolled} progress={progress} />
+      <Nav scrolled={scrolled || pathname.startsWith('/case')} progress={progress} />
       <div key={pathname} className="page-enter">
       <Routes>
         <Route path="/" element={<Home heroShift={heroShift} />} />
+        <Route path="/case/uti-no" element={<UtiCase />} />
         <Route path="/prosjekter/:slug" element={<ProjectPage />} />
         <Route path="*" element={<ProjectPage />} />
       </Routes>
