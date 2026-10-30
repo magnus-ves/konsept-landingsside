@@ -264,6 +264,7 @@ button {
 
 
 .project-card { color: inherit; }
+.project-card--flip .trio { order: 2; }
 .project-link {
   display: inline-flex;
   align-items: center;
@@ -356,7 +357,7 @@ button {
 @media (max-width: 760px) {
   .collage { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; row-gap: 12px; grid-auto-flow: dense; }
   .collage-item { grid-column: 1 / -1; margin-top: 0; }
-  .collage-item:nth-child(3), .collage-item:nth-child(6) { grid-column: auto; }
+  .collage-item[data-half] { grid-column: auto; }
 }
 
 .trio { position: relative; aspect-ratio: 16 / 10; min-width: 0; }

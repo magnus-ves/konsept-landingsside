@@ -54,6 +54,7 @@ export default function ProjectPage() {
               key={img.src}
               type="button"
               className="collage-item"
+              data-half={img.half ? '' : undefined}
               style={{ '--col': img.col, '--mt': img.mt, aspectRatio: `${img.width} / ${img.height}` }}
               onClick={() => setOpen(i)}
               aria-label={`Åpne bilde ${i + 1} i full størrelse`}

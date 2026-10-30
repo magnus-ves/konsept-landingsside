@@ -1,4 +1,4 @@
-import { cloudcon } from './assets';
+import { cloudcon, generasjonM } from './assets';
 
 export const marquee = [
   'FOTOGRAFI', 'MERKEVARE', 'MARKEDSFØRING', 'SOSIALE MEDIER', 'INNHOLD', 'STRATEGI',
@@ -31,6 +31,17 @@ export const projects = [
     // card trio on the home page: wide, tall, small
     covers: [cloudcon[1], cloudcon[0], cloudcon[6]],
     images: cloudcon,
+  },
+  {
+    id: 'generasjon-m',
+    slug: 'generasjon-m',
+    idx: '02',
+    title: 'Generasjon M',
+    tag: 'SOSIALE MEDIER',
+    desc: 'Innholdsproduksjon egnet for SOME og andre kommunikasjonskanaler.',
+    // card trio on the home page: wide, tall, small
+    covers: [generasjonM[0], generasjonM[4], generasjonM[1]],
+    images: generasjonM,
   },
 ];
 
