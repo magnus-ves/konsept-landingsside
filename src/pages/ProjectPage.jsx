@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { projects } from '../content';
 import { homeHref } from '../lib/home';
+import NotFound from './NotFound';
 import Lightbox from '../components/Lightbox';
 
 export default function ProjectPage() {
@@ -19,16 +20,7 @@ export default function ProjectPage() {
   }, [project]);
 
   if (!project) {
-    return (
-      <section style={{ padding: '200px 56px 120px', maxWidth: 1240, margin: '0 auto' }}>
-        <h1 className="section-title" style={{ fontSize: 'clamp(34px,4.4vw,54px)', color: '#fff' }}>
-          Fant ikke siden
-        </h1>
-        <p style={{ fontSize: 16, color: 'var(--ink-dim)', marginTop: 20 }}>
-          <Link to="/" className="back-link">← Til forsiden</Link>
-        </p>
-      </section>
-    );
+    return <NotFound />;
   }
 
   return (

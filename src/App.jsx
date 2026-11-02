@@ -7,6 +7,7 @@ import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
 import ServicePage from './pages/ServicePage';
+import NotFound from './pages/NotFound';
 import UtiCase from './pages/UtiCase';
 import useMagnetic from './lib/useMagnetic';
 
@@ -40,7 +41,7 @@ export default function App() {
         <Route path="/case/uti-no" element={<UtiCase />} />
         <Route path="/tjenester/:slug" element={<ServicePage />} />
         <Route path="/prosjekter/:slug" element={<ProjectPage />} />
-        <Route path="*" element={<ProjectPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       </div>
       <Footer />

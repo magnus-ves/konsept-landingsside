@@ -581,3 +581,13 @@ button {
 @media (min-width: 761px) and (max-width: 1080px) {
   .svc-includes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* 404 */
+.nf { min-height: 78vh; max-width: 1240px; margin: 0 auto; padding: 190px 56px 140px; display: flex; flex-direction: column; justify-content: center; }
+.nf-code { font-family: 'Old Standard TT', serif; font-style: italic; font-size: clamp(110px, 16vw, 220px); line-height: .9; color: rgba(232, 238, 243, .14); margin-bottom: 24px; }
+.nf-title { font-size: clamp(36px, 5.4vw, 68px); color: #fff; line-height: 1.05; max-width: 16ch; }
+.nf-link { align-self: flex-start; margin-top: 36px; font-size: clamp(17px, 1.6vw, 20px); color: var(--blue-light); border-bottom: 1px solid currentColor; padding-bottom: 4px; transition: color .25s ease; }
+.nf-link span { display: inline-block; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+.nf-link:hover { color: #fff; }
+.nf-link:hover span { transform: translateX(6px); }
+@media (max-width: 760px) { .nf { padding: 150px 20px 100px; min-height: 70vh; } }
