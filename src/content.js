@@ -5,11 +5,81 @@ export const marquee = [
 ];
 
 export const services = [
-  { num: '01', title: 'Fotografi', desc: 'Bilder som fanger essensen av merkevaren din.' },
-  { num: '02', title: 'Markedsføring', desc: 'Målrettede kampanjer som skaper resultater.' },
-  { num: '03', title: 'Merkevarebygging', desc: 'En tydelig identitet fra grunnen opp.' },
-  { num: '04', title: 'Sosiale medier', desc: 'Innhold som bygger relevans og fellesskap.' },
-  { num: '05', title: 'Innholdsproduksjon', desc: 'Visuelt og tekstlig innhold med retning.' },
+  {
+    num: '01',
+    slug: 'fotografi',
+    title: 'Fotografi',
+    desc: 'Bilder som fanger essensen av merkevaren din.',
+    intro:
+      'Bilder som viser hvem dere er, på scenen, på kontoret og der det skjer. Jeg fotograferer arrangementer, portretter og innhold dere kan bruke i alle kanaler.',
+    includes: [
+      { t: 'Arrangement og konferanse', d: 'Foredragsholdere, publikum og stemningen på stedet.' },
+      { t: 'Portretter og profilbilder', d: 'Til nettside, presse, LinkedIn og ledergrupper.' },
+      { t: 'Bedrifts- og produktbilder', d: 'Folk, lokaler og det dere lager.' },
+      { t: 'Klare til bruk', d: 'Ferdig redigerte bilder i formatene dere trenger.' },
+    ],
+    refs: ['cloud-con', 'agaia'],
+  },
+  {
+    num: '02',
+    slug: 'markedsforing',
+    title: 'Markedsføring',
+    desc: 'Målrettede kampanjer som skaper resultater.',
+    intro:
+      'Kampanjer med et tydelig mål og et budskap folk legger merke til. Jeg hjelper dere å nå de riktige menneskene, i de riktige kanalene.',
+    includes: [
+      { t: 'Kampanjeidé og budskap', d: 'Ett tydelig poeng som er lett å huske.' },
+      { t: 'Annonser for digitale kanaler', d: 'Tilpasset Meta, LinkedIn og Google.' },
+      { t: 'Visuelt materiell', d: 'Foto, video og grafikk laget for kampanjen.' },
+      { t: 'Oppfølging', d: 'Vi ser på hva som virker og justerer underveis.' },
+    ],
+    refs: ['generasjon-m'],
+  },
+  {
+    num: '03',
+    slug: 'merkevarebygging',
+    title: 'Merkevarebygging',
+    desc: 'En tydelig identitet fra grunnen opp.',
+    intro:
+      'En identitet som er lett å kjenne igjen og lett å bruke. Fra konsept og navn til logo, farger og typografi.',
+    includes: [
+      { t: 'Konsept og posisjon', d: 'Hva dere står for, og hvorfor det betyr noe.' },
+      { t: 'Logo og visuell identitet', d: 'Et uttrykk som fungerer stort og smått.' },
+      { t: 'Farger, typografi og bildestil', d: 'Et helhetlig system, ikke enkeltdeler.' },
+      { t: 'Retningslinjer', d: 'Enkle regler så alle bruker merkevaren riktig.' },
+    ],
+    refs: [],
+  },
+  {
+    num: '04',
+    slug: 'sosiale-medier',
+    title: 'Sosiale medier',
+    desc: 'Innhold som bygger relevans og fellesskap.',
+    intro:
+      'Innhold som passer formatet og folkene som følger dere. Poster, reels og stories som bygger relevans over tid.',
+    includes: [
+      { t: 'Innholdsplan', d: 'Hva dere skal si, hvor og når.' },
+      { t: 'Foto og video per plattform', d: 'Laget for feeden, ikke klippet til etterpå.' },
+      { t: 'Tekst og grafikk', d: 'Korte, tydelige budskap med egen stemme.' },
+      { t: 'Gjenkjennelig stil', d: 'Et uttrykk som gjør at folk ser at det er dere.' },
+    ],
+    refs: ['generasjon-m'],
+  },
+  {
+    num: '05',
+    slug: 'innholdsproduksjon',
+    title: 'Innholdsproduksjon',
+    desc: 'Visuelt og tekstlig innhold med retning.',
+    intro:
+      'Visuelt og tekstlig innhold med en klar retning, til nettside, sosiale medier, presentasjoner og trykk.',
+    includes: [
+      { t: 'Foto og video', d: 'Fra planlegging til ferdig klipp.' },
+      { t: 'Tekst og grafikk', d: 'Innhold som henger sammen med resten av merkevaren.' },
+      { t: 'Til alle flater', d: 'Nettside, kampanjer, presentasjoner og trykk.' },
+      { t: 'Riktige formater', d: 'Levert klart til bruk der dere trenger det.' },
+    ],
+    refs: ['generasjon-m', 'cloud-con'],
+  },
 ];
 
 export const steps = [

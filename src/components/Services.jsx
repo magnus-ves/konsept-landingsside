@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { services } from '../content';
 
 export default function Services() {
@@ -19,8 +20,9 @@ export default function Services() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid rgba(11,30,45,.14)' }}>
           {services.map((s) => (
-            <div
+            <Link
               key={s.num}
+              to={`/tjenester/${s.slug}`}
               className="kf-rise kf-srow service-row"
               style={{
                 display: 'grid',
@@ -39,7 +41,7 @@ export default function Services() {
               </h3>
               <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--cream-dim)' }}>{s.desc}</p>
               <span className="service-arrow" style={{ fontSize: 20, color: 'var(--blue)', justifySelf: 'end' }}>→</span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
