@@ -71,7 +71,7 @@ import utiIngierstrand from './uti/uti-ingierstrand.jpg';
 import utiInput from './uti/uti-input.jpg';
 import utiSti from './uti/uti-sti.jpg';
 import utiFjell from './uti/uti-fjell.jpg';
-import utiLogo from './uti/uti-logo.png';
+import utiLogo from './uti/uti-logo.svg';
 import utiSymbol from './uti/uti-symbol.svg';
 
 // UTI.no case. Campaign posts are full squares that already carry their own
@@ -80,8 +80,8 @@ export const uti = {
   hero: { src: utiHeroImg, width: 1600, height: 1064 },
   sti: { src: utiSti, width: 1200, height: 943 },
   fjell: { src: utiFjell, width: 2000, height: 1340 },
-  logo: { src: utiLogo, width: 1368, height: 575 },
-  symbol: { src: utiSymbol, width: 196, height: 288 },
+  logo: { src: utiLogo, width: 1043, height: 448 },
+  symbol: { src: utiSymbol, width: 196, height: 290 },
   campaign: [
     { src: utiMarka, width: 1400, height: 1400, alt: 'Kampanjepost: «Hva med en tur uti marka?» over en sti i skogen' },
     { src: utiIngierstrand, width: 1400, height: 1400, alt: 'Kampanjepost: «Hva med en tur ut til Ingierstrand?»' },
