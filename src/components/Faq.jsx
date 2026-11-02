@@ -7,7 +7,6 @@ export default function Faq() {
   return (
     <section style={{ padding: '150px 56px', maxWidth: 980, margin: '0 auto' }}>
       <div className="kf-rise" style={{ marginBottom: 58 }}>
-        <span className="eyebrow eyebrow--light">SPØRSMÅL</span>
         <h2 className="section-title" style={{ fontSize: 'clamp(32px,4vw,50px)', color: '#fff' }}>
           Ofte stilte spørsmål
         </h2>

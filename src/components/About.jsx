@@ -2,7 +2,6 @@ export default function About() {
   return (
     <section id="om" style={{ padding: '90px 56px 150px', maxWidth: 1240, margin: '0 auto' }}>
       <div className="kf-rise" style={{ maxWidth: 640 }}>
-        <span className="eyebrow eyebrow--light">OM KONSEPT</span>
         <h2 className="section-title" style={{ fontSize: 'clamp(32px,4vw,50px)', color: '#fff', lineHeight: 1.06, marginBottom: 26 }}>
           Fra idé til synlig <span className="serif-italic" style={{ color: 'var(--blue-pale)' }}>resultat.</span>
         </h2>

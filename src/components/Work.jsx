@@ -19,7 +19,6 @@ export default function Work() {
           }}
         >
           <div>
-            <span className="eyebrow eyebrow--light">ARBEID</span>
             <h2 className="section-title" style={{ fontSize: 'clamp(34px,4.4vw,54px)', color: '#fff' }}>
               Utvalgte prosjekter
             </h2>
@@ -45,7 +44,6 @@ export default function Work() {
                 <div style={{ fontFamily: "'Old Standard TT', serif", fontSize: 56, color: 'rgba(232,238,243,.22)', lineHeight: 1 }}>
                   {p.idx}
                 </div>
-                <span style={{ fontSize: 12.5, color: 'var(--blue-light)', letterSpacing: '.16em' }}>{p.tag}</span>
                 <h3 style={{ fontFamily: "'Josefin Sans', sans-serif", fontWeight: 500, fontSize: 'clamp(28px,3.4vw,42px)', letterSpacing: '-.02em', color: '#fff', margin: '14px 0 18px' }}>
                   {p.title}
                 </h3>

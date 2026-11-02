@@ -9,13 +9,12 @@ export default function Services() {
           style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, flexWrap: 'wrap', marginBottom: 70 }}
         >
           <div>
-            <span className="eyebrow eyebrow--dark">TJENESTER</span>
             <h2 className="section-title" style={{ fontSize: 'clamp(34px,4.4vw,54px)', color: 'var(--cream-ink)' }}>
               Det jeg gjør for deg
             </h2>
           </div>
           <p style={{ maxWidth: 360, fontSize: 16, lineHeight: 1.7, color: 'var(--cream-dim)' }}>
-            Seks disipliner, én retning. Vi setter dem sammen etter hva virksomheten din faktisk trenger.
+            Fem disipliner, én retning. Vi setter dem sammen etter hva virksomheten din faktisk trenger.
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid rgba(11,30,45,.14)' }}>

@@ -39,7 +39,6 @@ export default function ProjectPage() {
         style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 56, alignItems: 'end', margin: '56px 0' }}
       >
         <div style={{ minWidth: 0 }}>
-          <span className="eyebrow eyebrow--light">{project.tag}</span>
           <h1 className="section-title" style={{ fontSize: 'clamp(38px,5.6vw,72px)', color: '#fff', lineHeight: 1.02, letterSpacing: '-.03em' }}>
             {project.title}
           </h1>
