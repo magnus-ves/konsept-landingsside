@@ -2,13 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { projects, services } from '../content';
 import { homeHref } from '../lib/home';
-
-// Three distinct photos for the mosaic: the home-page covers first, then the
-// rest of the project's images.
-const mosaic = (p) => {
-  const seen = new Set();
-  return [...p.covers, ...p.images].filter((img) => !seen.has(img.src) && seen.add(img.src)).slice(0, 3);
-};
+import ProjectCard from '../components/ProjectCard';
 
 export default function ServicePage() {
   const { slug } = useParams();
@@ -66,26 +60,7 @@ export default function ServicePage() {
           <h2 className="section-title svc-h2 kf-rise">Referansearbeid</h2>
           <div className="ref-list">
             {refs.map((p, i) => (
-              <Link key={p.slug} to={`/prosjekter/${p.slug}`} className={`ref kf-rise${i % 2 ? ' ref--flip' : ''}`}>
-                <div className="ref-mosaic" aria-hidden="true">
-                  {mosaic(p).map((img, k) => (
-                    <div key={img.src} className={`ref-tile ref-tile--${k + 1}`}>
-                      <img src={img.src} width={img.width} height={img.height} alt="" loading="lazy" />
-                    </div>
-                  ))}
-                </div>
-                <div className="ref-text">
-                  <span className="ref-idx">{String(i + 1).padStart(2, '0')}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
-                  <div className="ref-meta">
-                    <span>{p.images.length} bilder</span>
-                    <span className="ref-cta">
-                      Se prosjektet <span aria-hidden="true">→</span>
-                    </span>
-                  </div>
-                </div>
-              </Link>
+              <ProjectCard key={p.slug} project={p} idx={String(i + 1).padStart(2, '0')} />
             ))}
           </div>
         </div>
