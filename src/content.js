@@ -1,7 +1,7 @@
 import { agaia, cloudcon, generasjonM } from './assets';
 
 export const marquee = [
-  'FOTOGRAFI', 'MERKEVARE', 'MARKEDSFØRING', 'SOSIALE MEDIER', 'INNHOLD', 'STRATEGI',
+  'FOTOGRAFI', 'MERKEVARE', 'MARKEDSFØRING', 'SOSIALE MEDIER', 'INNHOLD',
 ];
 
 export const services = [
@@ -10,7 +10,6 @@ export const services = [
   { num: '03', title: 'Merkevarebygging', desc: 'En tydelig identitet fra grunnen opp.' },
   { num: '04', title: 'Sosiale medier', desc: 'Innhold som bygger relevans og fellesskap.' },
   { num: '05', title: 'Innholdsproduksjon', desc: 'Visuelt og tekstlig innhold med retning.' },
-  { num: '06', title: 'Strategi og rådgivning', desc: 'Klarhet før vi skaper.' },
 ];
 
 export const steps = [

@@ -43,10 +43,6 @@ export default function Team() {
                 <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Design</div>
                 <div style={{ fontSize: 13.5, color: 'var(--cream-dim)', marginTop: 6 }}>Merkevare</div>
               </div>
-              <div>
-                <div style={{ fontFamily: "'Josefin Sans', sans-serif", fontSize: 26, color: 'var(--cream-ink)' }}>Strategi</div>
-                <div style={{ fontSize: 13.5, color: 'var(--cream-dim)', marginTop: 6 }}>Rådgivning</div>
-              </div>
             </div>
             <a href="#kontakt" className="btn-dark">Ta kontakt med Magnus →</a>
           </div>
