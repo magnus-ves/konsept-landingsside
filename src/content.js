@@ -63,7 +63,7 @@ export const services = [
       { t: 'Tekst og grafikk', d: 'Korte, tydelige budskap med egen stemme.' },
       { t: 'Gjenkjennelig stil', d: 'Et uttrykk som gjør at folk ser at det er dere.' },
     ],
-    refs: ['generasjon-m', 'cloud-con'],
+    refs: ['generasjon-m'],
   },
   {
     num: '05',
@@ -78,7 +78,7 @@ export const services = [
       { t: 'Til alle flater', d: 'Nettside, kampanjer, presentasjoner og trykk.' },
       { t: 'Riktige formater', d: 'Levert klart til bruk der dere trenger det.' },
     ],
-    refs: ['generasjon-m', 'cloud-con'],
+    refs: ['generasjon-m'],
   },
 ];
 
