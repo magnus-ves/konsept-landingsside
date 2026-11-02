@@ -9,15 +9,13 @@ const POINTS = [
   { l: 'V', a: 270 },
 ];
 
-// 404: the digits drift like they're at sea and the compass needle points
-// away from the cursor (the wrong way). Hovering the link brings everything
-// back on course: the needle swings to the link and the digits straighten.
+// 404: the compass needle points away from the cursor (the wrong way).
+// Hovering the link brings it back on course: the needle swings to the link.
 export default function NotFound() {
   const rootRef = useRef(null);
   const compassRef = useRef(null);
   const needleRef = useRef(null);
   const linkRef = useRef(null);
-  const digitsRef = useRef([]);
   const [steady, setSteady] = useState(false);
   const steadyRef = useRef(false);
   steadyRef.current = steady;
@@ -36,7 +34,6 @@ export default function NotFound() {
     let pointer = null;
     let angle = 140;
     let vel = 0;
-    let drift = 1;
     const start = performance.now();
 
     const centre = (el) => {
@@ -63,15 +60,6 @@ export default function NotFound() {
       angle += vel;
       needleRef.current.style.transform = `rotate(${angle.toFixed(2)}deg)`;
 
-      drift += ((steadyRef.current ? 0 : 1) - drift) * 0.06;
-      digitsRef.current.forEach((el, i) => {
-        if (!el) return;
-        const ph = i * 1.9;
-        const rot = Math.sin(t * 0.9 + ph) * 9 * drift;
-        const y = Math.sin(t * 1.2 + ph) * 14 * drift;
-        const x = Math.cos(t * 0.7 + ph) * 6 * drift;
-        el.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) rotate(${rot.toFixed(2)}deg)`;
-      });
       raf = requestAnimationFrame(tick);
     };
 
@@ -99,11 +87,7 @@ export default function NotFound() {
       <div className="nf-inner">
       <div className="nf-text">
         <div className="nf-code" aria-label="404">
-          {['4', '0', '4'].map((d, i) => (
-            <span key={i} ref={(el) => (digitsRef.current[i] = el)} aria-hidden="true">
-              {d}
-            </span>
-          ))}
+          <span aria-hidden="true">404</span>
         </div>
         <h1 className="section-title nf-title">Konseptet gikk i feil retning.</h1>
         <Link

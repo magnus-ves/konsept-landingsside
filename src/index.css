@@ -610,7 +610,7 @@ button {
   color: rgba(232, 238, 243, .16);
   margin-bottom: 28px;
 }
-.nf-code span { display: inline-block; will-change: transform; transition: color .6s ease; }
+.nf-code span { transition: color .6s ease; }
 .nf.is-steady .nf-code span { color: rgba(127, 165, 192, .45); }
 .nf-title { font-size: clamp(36px, 5vw, 64px); color: #fff; line-height: 1.05; max-width: 15ch; }
 .nf-link {
