@@ -254,6 +254,18 @@
   margin-top: 8px !important;
 }
 
+/* Full-bleed landscape before the goal */
+.uti-wide {
+  margin: 160px 0 0;
+}
+.uti-wide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 88vh;
+  object-fit: cover;
+}
+
 /* Målet */
 .uti-goal {
   padding-top: 200px;
@@ -357,6 +369,9 @@
   }
   .uti-goal {
     padding-top: 130px;
+  }
+  .uti-wide {
+    margin-top: 100px;
   }
   .uti-end {
     flex-direction: column;

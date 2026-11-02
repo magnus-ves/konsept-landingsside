@@ -111,6 +111,10 @@ export default function UtiCase() {
         </div>
       </section>
 
+      <figure className="uti-wide kf-rise">
+        <img src={uti.fjell.src} width={uti.fjell.width} height={uti.fjell.height} alt="Utsikt over et fjellvann med blomster i forgrunnen" loading="lazy" />
+      </figure>
+
       <section className="uti-goal uti-wrap">
         <p className="uti-goal-big kf-rise">Vi måler suksess i turer, ikke i klikk.</p>
         <p className="uti-goal-sub kf-rise">
