@@ -3,6 +3,13 @@ import { Link, useParams } from 'react-router-dom';
 import { projects, services } from '../content';
 import { homeHref } from '../lib/home';
 
+// Three distinct photos for the mosaic: the home-page covers first, then the
+// rest of the project's images.
+const mosaic = (p) => {
+  const seen = new Set();
+  return [...p.covers, ...p.images].filter((img) => !seen.has(img.src) && seen.add(img.src)).slice(0, 3);
+};
+
 export default function ServicePage() {
   const { slug } = useParams();
   const index = services.findIndex((s) => s.slug === slug);
@@ -30,8 +37,7 @@ export default function ServicePage() {
     );
   }
 
-  const matched = service.refs.map((r) => projects.find((p) => p.slug === r)).filter(Boolean);
-  const refs = matched.length ? matched : projects;
+  const refs = service.refs.map((r) => projects.find((p) => p.slug === r)).filter(Boolean);
   const next = services[(index + 1) % services.length];
 
   return (
@@ -55,21 +61,35 @@ export default function ServicePage() {
         ))}
       </ul>
 
-      <div className="svc-refs">
-        <h2 className="section-title svc-h2 kf-rise">{matched.length ? 'Referansearbeid' : 'Utvalgt arbeid'}</h2>
-        <div className="svc-grid">
-          {refs.map((p) => (
-            <Link key={p.slug} to={`/prosjekter/${p.slug}`} className="svc-card kf-rise">
-              <div className="svc-card-img">
-                <img src={p.covers[0].src} width={p.covers[0].width} height={p.covers[0].height} alt="" loading="lazy" />
-              </div>
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
-              <span className="project-link">Se prosjektet →</span>
-            </Link>
-          ))}
+      {refs.length > 0 && (
+        <div className="svc-refs">
+          <h2 className="section-title svc-h2 kf-rise">Referansearbeid</h2>
+          <div className="ref-list">
+            {refs.map((p, i) => (
+              <Link key={p.slug} to={`/prosjekter/${p.slug}`} className={`ref kf-rise${i % 2 ? ' ref--flip' : ''}`}>
+                <div className="ref-mosaic" aria-hidden="true">
+                  {mosaic(p).map((img, k) => (
+                    <div key={img.src} className={`ref-tile ref-tile--${k + 1}`}>
+                      <img src={img.src} width={img.width} height={img.height} alt="" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+                <div className="ref-text">
+                  <span className="ref-idx">{String(i + 1).padStart(2, '0')}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                  <div className="ref-meta">
+                    <span>{p.images.length} bilder</span>
+                    <span className="ref-cta">
+                      Se prosjektet <span aria-hidden="true">→</span>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="svc-end">
         <div className="kf-rise">

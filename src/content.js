@@ -33,7 +33,7 @@ export const services = [
       { t: 'Visuelt materiell', d: 'Foto, video og grafikk laget for kampanjen.' },
       { t: 'Oppfølging', d: 'Vi ser på hva som virker og justerer underveis.' },
     ],
-    refs: ['generasjon-m'],
+    refs: [],
   },
   {
     num: '03',
@@ -63,7 +63,7 @@ export const services = [
       { t: 'Tekst og grafikk', d: 'Korte, tydelige budskap med egen stemme.' },
       { t: 'Gjenkjennelig stil', d: 'Et uttrykk som gjør at folk ser at det er dere.' },
     ],
-    refs: ['generasjon-m'],
+    refs: ['generasjon-m', 'cloud-con'],
   },
   {
     num: '05',
